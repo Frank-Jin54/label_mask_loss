@@ -153,9 +153,9 @@ class MaskedCrossEntropyLoss(nn.CrossEntropyLoss):
         else:
             target_digit = target
 
-        target_mask_1 = torch.logical_and(target_digit > 0, input.ge(self.beta))
+        target_mask_1 = torch.logical_not(torch.logical_and(target_digit > 0, input.ge(self.beta)))
 
-        target_mask_0 = torch.logical_and(target_digit < 1, input.le(self.alpha))
+        target_mask_0 = torch.logical_not(torch.logical_and(target_digit < 1, input.le(self.alpha)))
 
         input_new = torch.where(target_mask_1, input, torch.tensor(1.0))
         input_new = torch.where(target_mask_0, input_new, torch.tensor(0.0))
