@@ -1,8 +1,9 @@
 import torch.nn as nn
+import torch.nn.functional
 import torch.nn.functional as F
 from torch import Tensor
 from typing import Optional
-class PatialCrossEntropyLoss(nn.CrossEntropyLoss):
+class MaskedCrossEntropyLoss(nn.CrossEntropyLoss):
     r"""This criterion computes the cross entropy loss between input logits
     and target.
 
@@ -138,14 +139,26 @@ class PatialCrossEntropyLoss(nn.CrossEntropyLoss):
     label_smoothing: float
 
     def __init__(self, weight: Optional[Tensor] = None, size_average=None, ignore_index: int = -100,
-                 reduce=None, reduction: str = 'mean', label_smoothing: float = 0.0) -> None:
+                 reduce=None, reduction: str = 'mean', alpha: float = 0.0, beta: float = 1.0) -> None:
         super().__init__(weight, size_average, reduce, reduction)
         self.ignore_index = ignore_index
-        self.label_smoothing = label_smoothing
+        self.alpha = alpha
+        self.beta = beta
 
     def forward(self, input: Tensor, target: Tensor) -> Tensor:
         # get right input and wrong input following
+        if len(input.size()) > len(target.size()):
+            class_num = input.size()[-1]
+            target_digit = torch.nn.functional.one_hot(target, num_classes=class_num)
+        else:
+            target_digit = target
 
-        return F.cross_entropy(input, target, weight=self.weight,
+        target_mask_1 = torch.logical_and(target_digit > 0, input.ge(self.beta))
+
+        target_mask_0 = torch.logical_and(target_digit < 1, input.le(self.alpha))
+
+        input_new = torch.where(target_mask_1, input, torch.tensor(1.0))
+        input_new = torch.where(target_mask_0, input_new, torch.tensor(0.0))
+        return F.cross_entropy(input_new, target, weight=self.weight,
                                ignore_index=self.ignore_index, reduction=self.reduction,
                                label_smoothing=self.label_smoothing)
