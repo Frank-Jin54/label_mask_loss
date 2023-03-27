@@ -5,6 +5,7 @@ from torch.optim import Optimizer
 from torch.utils.data import DataLoader
 from torchvision.datasets import MNIST
 from torchvision.transforms import ToTensor
+from opt.mask_loss import MaskLossCrossEntropyLoss
 from torch.utils.tensorboard import SummaryWriter
 import math
 import matplotlib.pyplot as plt
@@ -15,32 +16,36 @@ class Net(nn.Module):
         self.fc1 = nn.Linear(28*28, 512)
         self.fc2 = nn.Linear(512, 512)
         self.fc3 = nn.Linear(512, 10)
+        self.sf = nn.Softmax()
 
     def forward(self, x):
         x = x.view(-1, 28*28)
         x = torch.relu(self.fc1(x))
         x = torch.relu(self.fc2(x))
         x = self.fc3(x)
+        x = self.sf(x)
         return x
 
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("cpu")
 # Loading the dataset
-dataset = MNIST(root='.', train=True, download=True, transform=ToTensor())
-dataloader = DataLoader(dataset, batch_size=32, shuffle=True)
-dataloader.dataset
+dataset_train = MNIST(root='.', train=True, download=True, transform=ToTensor())
+dataset_test = MNIST(root='.', train=False, download=True, transform=ToTensor())
+dataloader_train = DataLoader(dataset_train, batch_size=32, shuffle=True)
+dataloader_train = DataLoader(dataset_test, batch_size=32, shuffle=True)
 
-sample_idx = torch.randint(len(dataloader), size=(1,)).item()
-len(dataloader)
+sample_idx = torch.randint(len(dataloader_train), size=(1,)).item()
+print(len(dataloader_train))
 
 # Model
 model = Net().to(device)
 optimizer = MyAdam(model.parameters(), weight_decay=0.00001)
 loss_fn = nn.CrossEntropyLoss()
+# loss_fn = MaskLossCrossEntropyLoss(alpha=0.05, beta=0.95)
 
 num_epochs = 10
 for i in range(num_epochs):
-    for inputs, labels in dataloader:
+    for inputs, labels in dataloader_train:
         inputs, labels = inputs.to(device), labels.to(device)
         outputs = model(inputs)
         loss = loss_fn(outputs, labels)
@@ -52,7 +57,14 @@ for i in range(num_epochs):
 
     plt.plot(i, loss.item(), 'ro-')
     print(i, '>> Loss :', loss.item())
+    # test accuracy of test data
+    acc = []
+    for inputs, labels in dataset_test:
+        inputs = inputs.to(device)
+        outputs = model(inputs)
+        acc.append(torch.argmax(outputs) == labels)
 
+    print("accuracy:", len([a==True for a in acc]) / len(acc))
 plt.title('Losses over iterations')
 plt.xlabel('iterations')
 plt.ylabel('Losses')
