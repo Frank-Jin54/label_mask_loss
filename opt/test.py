@@ -39,8 +39,8 @@ len(dataloader)
 # Model
 model = Net().to(device)
 optimizer = MyAdam(model.parameters(), weight_decay=0.00001)
-# loss_fn = nn.CrossEntropyLoss()
-loss_fn = MaskedCrossEntropyLoss(alpha=0.05, beta=0.95)
+loss_fn = nn.CrossEntropyLoss()
+# loss_fn = MaskedCrossEntropyLoss(alpha=0.05, beta=0.95)
 
 num_epochs = 10
 for i in range(num_epochs):

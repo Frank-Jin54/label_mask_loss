@@ -139,9 +139,8 @@ class MaskedCrossEntropyLoss(nn.CrossEntropyLoss):
     label_smoothing: float
 
     def __init__(self, weight: Optional[Tensor] = None, size_average=None, ignore_index: int = -100,
-                 reduce=None, reduction: str = 'mean', alpha: float = 0.0, beta: float = 1.0) -> None:
-        super().__init__(weight, size_average, reduce, reduction)
-        self.ignore_index = ignore_index
+                 reduce=None, reduction: str = 'mean', label_smoothing: float = 0.0, alpha: float = 0.0, beta: float = 1.0) -> None:
+        super().__init__(weight, size_average, ignore_index, reduce, reduction, label_smoothing=label_smoothing)
         self.alpha = alpha
         self.beta = beta
 
@@ -153,12 +152,8 @@ class MaskedCrossEntropyLoss(nn.CrossEntropyLoss):
         else:
             target_digit = target
 
-        target_mask_1 = torch.logical_not(torch.logical_and(target_digit > 0, input.ge(self.beta)))
-
-        target_mask_0 = torch.logical_not(torch.logical_and(target_digit < 1, input.le(self.alpha)))
-
-        input_new = torch.where(target_mask_1, input, torch.tensor(1.0))
-        input_new = torch.where(target_mask_0, input_new, torch.tensor(0.0))
-        return F.cross_entropy(input_new, target, weight=self.weight,
-                               ignore_index=self.ignore_index, reduction=self.reduction,
-                               label_smoothing=self.label_smoothing)
+        # target_mask_1 = torch.logical_and(target_digit > 0.5, input.ge(self.beta))
+        target_mask_0 = torch.logical_and(target_digit < 0.5, input.le(self.alpha))
+        # input_new = torch.where(torch.logical_not(target_mask_1), input, torch.tensor(1.0))
+        input_new = torch.where(torch.logical_not(target_mask_0), input, torch.tensor(0.0))
+        return super().forward(input_new, target)
