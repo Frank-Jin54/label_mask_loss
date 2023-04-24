@@ -16,17 +16,13 @@ torch.cuda.manual_seed(1000)
 import argparse
 
 parser = argparse.ArgumentParser(description='Train Model')
-parser.add_argument('--epoch', '-e', dest='epoch', default=100, help='epoch')
+parser.add_argument('--epoch', '-e', dest='epoch', default=50, help='epoch')
 parser.add_argument('--dataset', '-d', dest='dataset', default="CIFAR10", help='dataset', required=False)
 parser.add_argument('--opt_alg', '-a', dest='opt_alg', default="SGD", help='opt_alg', required=False)
 parser.add_argument('--lossfunction', '-l', dest='lossfunction', default="MASKEDLABEL", help='lossfunction', required=False)
 
 args = parser.parse_args()
 
-if args.lossfunction == "MASKEDLABEL":
-    criterion = MaskedCrossEntropyLoss(alpha=0.05, beta=1)
-elif args.lossfunction == 'CROSSENTROPY':
-    criterion = nn.CrossEntropyLoss()
 
 ########################################################################
 # The output of torchvision datasets are PILImage images of range [0, 1].
@@ -128,6 +124,11 @@ elif args.dataset == "DTD":
                                              shuffle=False, num_workers=0)
 
 dataclasses_num = len(trainset.classes)
+
+if args.lossfunction == "MASKEDLABEL":
+    criterion = MaskedCrossEntropyLoss(alpha=0.9, num_class=dataclasses_num)
+elif args.lossfunction == 'CROSSENTROPY':
+    criterion = nn.CrossEntropyLoss()
 def imshow(img):
     img = img / 2 + 0.5     # unnormalize
     npimg = img.numpy()
@@ -166,13 +167,13 @@ class Net(nn.Module):
 net = Net()
 
 if args.opt_alg == 'SGD':
-    optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
+    optimizer = optim.SGD(net.parameters(), lr=1e-4, momentum=0.9)
 elif args.opt_alg == "ADAM":
-    optimizer = optim.Adam(net.parameters())
+    optimizer = optim.Adam(net.parameters(), lr=1e-4)
 elif args.opt_alg == "RADAM":
-    optimizer = optim.RAdam(net.parameters())
+    optimizer = optim.RAdam(net.parameters(), lr=1e-4)
 elif args.opt_alg == "RMSprop":
-    optimizer = optim.RMSprop(net.parameters())
+    optimizer = optim.RMSprop(net.parameters(), lr=1e-4)
 else:
     raise Exception("Not accept optimizer of {}".args.opt_alg)
 
@@ -216,12 +217,9 @@ for epoch in range(int(args.epoch)):  # loop over the dataset multiple times
 
         # print statistics
         running_loss += loss.item()
-        if i % 2000 == 1999:    # print every 2000 mini-batches
-            print(f'[{epoch + 1}, {i + 1:5d}] loss: {running_loss / 2000:.3f}')
-            running_loss = 0.0
     model_path = os.path.join(current_folder, 'model', '{}_{}_{}_net.pth'.format(args.dataset, args.opt_alg, args.lossfunction))
     save_model(net, model_path)
-    acc.append(run_test(model_path))
+    acc.append([epoch, run_test(model_path), round(running_loss, 2)])
 print('Finished Training')
 result_file = os.path.join(os.path.join(current_folder, 'result', 'result_{}_{}_{}.csv'.format(args.dataset, args.opt_alg, args.lossfunction)))
-pd.Series(acc).to_csv(result_file)
+pd.DataFrame(acc).to_csv(result_file, header=["epoch", "training_acc", "training_loss"], index=False)

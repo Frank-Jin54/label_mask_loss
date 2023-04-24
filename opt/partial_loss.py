@@ -139,10 +139,11 @@ class MaskedCrossEntropyLoss(nn.CrossEntropyLoss):
     label_smoothing: float
 
     def __init__(self, weight: Optional[Tensor] = None, size_average=None, ignore_index: int = -100,
-                 reduce=None, reduction: str = 'mean', label_smoothing: float = 0.0, alpha: float = 0.0, beta: float = 1.0) -> None:
+                 reduce=None, reduction: str = 'mean', label_smoothing: float = 0.0, alpha: float = 0.0, num_class: int = 10) -> None:
         super().__init__(weight, size_average, ignore_index, reduce, reduction, label_smoothing=label_smoothing)
-        self.alpha = alpha
-        self.beta = beta
+        P0 = (1 - alpha) /num_class
+        P1 = alpha / num_class
+        self.expectation = (num_class - 1)/num_class * P0 + 1 / num_class * P1
 
     def forward(self, input: Tensor, target: Tensor) -> Tensor:
         # get right input and wrong input following
@@ -153,7 +154,7 @@ class MaskedCrossEntropyLoss(nn.CrossEntropyLoss):
             target_digit = target
 
         # target_mask_1 = torch.logical_and(target_digit > 0.5, input.ge(self.beta))
-        target_mask_0 = torch.logical_and(target_digit < 0.5, input.le(self.alpha))
+        target_mask_0 = torch.logical_and(target_digit < 0.5, input.le(self.expectation))
         # input_new = torch.where(torch.logical_not(target_mask_1), input, torch.tensor(1.0))
         input_new = torch.where(torch.logical_not(target_mask_0), input, torch.tensor(0.0))
         return super().forward(input_new, target)
