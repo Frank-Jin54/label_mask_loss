@@ -16,7 +16,7 @@ torch.cuda.manual_seed(1000)
 import argparse
 
 parser = argparse.ArgumentParser(description='Train Model')
-parser.add_argument('--epoch', '-e', dest='epoch', default=50, help='epoch')
+parser.add_argument('--epoch', '-e', dest='epoch', default=100, help='epoch')
 parser.add_argument('--dataset', '-d', dest='dataset', default="CIFAR10", help='dataset', required=False)
 parser.add_argument('--opt_alg', '-a', dest='opt_alg', default="SGD", help='opt_alg', required=False)
 parser.add_argument('--lossfunction', '-l', dest='lossfunction', default="MASKEDLABEL", help='lossfunction', required=False)
@@ -126,7 +126,7 @@ elif args.dataset == "DTD":
 dataclasses_num = len(trainset.classes)
 
 if args.lossfunction == "MASKEDLABEL":
-    criterion = MaskedCrossEntropyLoss(alpha=0.9, num_class=dataclasses_num)
+    criterion = MaskedCrossEntropyLoss(x=0.9, num_class=dataclasses_num)
 elif args.lossfunction == 'CROSSENTROPY':
     criterion = nn.CrossEntropyLoss()
 def imshow(img):
