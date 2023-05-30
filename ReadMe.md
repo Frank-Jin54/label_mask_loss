@@ -1,0 +1,1 @@
+# automatically scale the alpha value during the training process

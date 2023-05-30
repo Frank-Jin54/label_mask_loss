@@ -16,7 +16,7 @@ torch.cuda.manual_seed(1000)
 import argparse
 
 parser = argparse.ArgumentParser(description='Train Model')
-parser.add_argument('--epoch', '-e', dest='epoch', default=100, help='epoch')
+parser.add_argument('--epoch', '-e', dest='epoch', default=50, help='epoch')
 parser.add_argument('--dataset', '-d', dest='dataset', default="CIFAR10", help='dataset', required=False)
 parser.add_argument('--opt_alg', '-a', dest='opt_alg', default="SGD", help='opt_alg', required=False)
 parser.add_argument('--lossfunction', '-l', dest='lossfunction', default="MASKEDLABEL", help='lossfunction', required=False)
@@ -126,7 +126,7 @@ elif args.dataset == "DTD":
 dataclasses_num = len(trainset.classes)
 
 if args.lossfunction == "MASKEDLABEL":
-    criterion = MaskedCrossEntropyLoss(x=0.9, num_class=dataclasses_num)
+    criterion = MaskedCrossEntropyLoss(alpha=0.9, num_class=dataclasses_num)
 elif args.lossfunction == 'CROSSENTROPY':
     criterion = nn.CrossEntropyLoss()
 def imshow(img):
@@ -143,28 +143,9 @@ def imshow(img):
 # take 3-channel images (instead of 1-channel images as it was defined).
 
 
-class Net(nn.Module):
-    def __init__(self):
-        super().__init__()
-        self.conv1 = nn.Conv2d(3, 6, 5)
-        self.pool = nn.MaxPool2d(2, 2)
-        self.conv2 = nn.Conv2d(6, 16, 5)
-        self.fc1 = nn.Linear(16 * 5 * 5, 1024)
-        self.fc2 = nn.Linear(1024, 512)
-        self.fc3 = nn.Linear(512, dataclasses_num)
-        self.sf = nn.Softmax()
+from model_define.hugging_face_vit import ViTForImageClassification
 
-    def forward(self, x):
-        x = self.pool(F.relu(self.conv1(x)))
-        x = self.pool(F.relu(self.conv2(x)))
-        x = torch.flatten(x, 1)  # flatten all dimensions except batch
-        x = F.relu(self.fc1(x))
-        x = F.relu(self.fc2(x))
-        x = self.fc3(x)
-        x = self.sf(x)
-        return x
-
-net = Net()
+net = ViTForImageClassification(num_labels=dataclasses_num)
 
 if args.opt_alg == 'SGD':
     optimizer = optim.SGD(net.parameters(), lr=1e-4, momentum=0.9)
@@ -181,7 +162,6 @@ else:
 def run_test(model_path):
     correct = 0
     total = 0
-    net = Net()
     net.load_state_dict(torch.load(model_path))
     # since we're not training, we don't need to calculate the gradients for our outputs
     with torch.no_grad():
@@ -210,12 +190,11 @@ for epoch in range(int(args.epoch)):  # loop over the dataset multiple times
         optimizer.zero_grad()
 
         # forward + backward + optimize
-        outputs = net(inputs)
+        outputs = net(inputs, interpolate_pos_encoding=True)
         loss = criterion(outputs, labels)
         loss.backward()
         optimizer.step()
 
-        # print statistics
         running_loss += loss.item()
     model_path = os.path.join(current_folder, 'model', '{}_{}_{}_net.pth'.format(args.dataset, args.opt_alg, args.lossfunction))
     save_model(net, model_path)
