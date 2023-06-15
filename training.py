@@ -37,7 +37,7 @@ transform = transforms.Compose(
     [transforms.ToTensor(),
      transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
 
-batch_size = 4
+batch_size = 128
 
 current_folder = os.path.dirname(os.path.abspath(__file__))
 data_path = os.path.join(current_folder, 'data')
@@ -144,8 +144,8 @@ def imshow(img):
 
 
 from model_define.hugging_face_vit import ViTForImageClassification
-
-net = ViTForImageClassification(num_labels=dataclasses_num)
+from model_define.defined_model import Net
+net =Net(num_class=dataclasses_num)
 
 if args.opt_alg == 'SGD':
     optimizer = optim.SGD(net.parameters(), lr=1e-4, momentum=0.9)
@@ -190,7 +190,7 @@ for epoch in range(int(args.epoch)):  # loop over the dataset multiple times
         optimizer.zero_grad()
 
         # forward + backward + optimize
-        outputs = net(inputs, interpolate_pos_encoding=True)
+        outputs = net(inputs)
         loss = criterion(outputs, labels)
         loss.backward()
         optimizer.step()
@@ -198,7 +198,9 @@ for epoch in range(int(args.epoch)):  # loop over the dataset multiple times
         running_loss += loss.item()
     model_path = os.path.join(current_folder, 'model', '{}_{}_{}_net.pth'.format(args.dataset, args.opt_alg, args.lossfunction))
     save_model(net, model_path)
-    acc.append([epoch, run_test(model_path), round(running_loss, 2)])
+    acc_epoch = run_test(model_path)
+    acc.append([epoch, acc_epoch, round(running_loss, 2)])
+    print("{} epoch acc is".format(epoch, acc_epoch))
 print('Finished Training')
 result_file = os.path.join(os.path.join(current_folder, 'result', 'result_{}_{}_{}.csv'.format(args.dataset, args.opt_alg, args.lossfunction)))
 pd.DataFrame(acc).to_csv(result_file, header=["epoch", "training_acc", "training_loss"], index=False)
