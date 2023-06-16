@@ -3,6 +3,9 @@ import torch.nn.functional
 import torch.nn.functional as F
 from torch import Tensor
 from typing import Optional
+
+device = torch.device('cuda:0')
+
 class MaskedCrossEntropyLoss(nn.CrossEntropyLoss):
     r"""This criterion computes the cross entropy loss between input logits
     and target.
@@ -140,7 +143,7 @@ class MaskedCrossEntropyLoss(nn.CrossEntropyLoss):
 
     def __init__(self, weight: Optional[Tensor] = None, size_average=None, ignore_index: int = -100,
                  reduce=None, reduction: str = 'mean', label_smoothing: float = 0.0, alpha: float = 0.0, num_class: int = 10) -> None:
-        super().__init__(weight, size_average, ignore_index, reduce, reduction, label_smoothing=label_smoothing)
+        super().__init__(weight, size_average, ignore_index, reduce, reduction)
         P0 = (1 - alpha) /num_class
         P1 = alpha
         self.expectation = (num_class - 1)/num_class * P0 + 1 / num_class * P1
@@ -155,7 +158,7 @@ class MaskedCrossEntropyLoss(nn.CrossEntropyLoss):
 
         target_mask_0 = torch.logical_and(target_digit < 0.5, input.le(self.expectation))
         # get maximum of input with 0 target
-        input_new = torch.where(torch.logical_not(target_mask_0), input, torch.tensor(0.0))
+        input_new = torch.where(torch.logical_not(target_mask_0).to(device), input, torch.tensor(0.0).to(device))
         return super().forward(input_new, target)
 
 
@@ -297,10 +300,10 @@ class AdaptiveMaskedCrossEntropyLoss(nn.CrossEntropyLoss):
     def __init__(self, weight: Optional[Tensor] = None, size_average=None, ignore_index: int = -100,
                  reduce=None, reduction: str = 'mean', label_smoothing: float = 0.0, alpha: float = 0.0,
                  num_class: int = 10) -> None:
-        super().__init__(weight, size_average, ignore_index, reduce, reduction, label_smoothing=label_smoothing)
+        super().__init__(weight, size_average, ignore_index, reduce, reduction)
         P0 = (1 - alpha) / num_class
         P1 = alpha
-        self.expectation = (num_class - 1) / num_class * P0 + 1 / num_class * P1
+        self.expectation = torch.tensor((num_class - 1) / num_class * P0 + 1 / num_class * P1).to(device)
 
     def forward(self, input: Tensor, target: Tensor) -> Tensor:
         # get right input and wrong input following
@@ -311,9 +314,9 @@ class AdaptiveMaskedCrossEntropyLoss(nn.CrossEntropyLoss):
             target_digit = target
 
         # get maximum of input with 0 target
-        mask_index = target.le(0.5)  # get the value of the 0 target
+        mask_index = target_digit.le(0.5)  # get the value of the 0 target
         maximum_value = torch.max(torch.masked_select(input, mask_index)) * 0.8
         expect = torch.minimum(maximum_value, self.expectation)
         target_mask_0 = torch.logical_and(target_digit < 0.5, input.le(expect))
-        input_new = torch.where(torch.logical_not(target_mask_0), input, torch.tensor(0.0))
+        input_new = torch.where(torch.logical_not(target_mask_0).to(device), input, torch.tensor(0.0).to(device))
         return super().forward(input_new, target)

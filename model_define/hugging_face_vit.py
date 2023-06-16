@@ -1,15 +1,15 @@
 from transformers import ViTConfig, ViTModel
 import torch.nn as nn
 # Initializing a ViT vit-base-patch16-224 style configuration
-configuration = ViTConfig()
 
 # Initializing a model (with random weights) from the vit-base-patch16-224 style configuration
-vit_model = ViTModel(configuration)
 
 class ViTForImageClassification(nn.Module):
-    def __init__(self, num_labels=10):
+    def __init__(self, num_labels=10, imagesize=224):
         super(ViTForImageClassification, self).__init__()
-        self.vit = vit_model
+        configuration = ViTConfig(num_hidden_layers=2, num_attention_heads=2, hidden_size=256, intermediate_size=128,
+                                  encoder_stride=1, image_size=imagesize)
+        self.vit = ViTModel(configuration)
         self.dropout = nn.Dropout(0.1)
         self.classifier = nn.Linear(self.vit.config.hidden_size, num_labels)
         self.num_labels = num_labels

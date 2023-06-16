@@ -2,12 +2,12 @@
 import torch
 import torchvision
 import torchvision.transforms as transforms
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import numpy as np
 import torch.optim as optim
 import torch.nn as nn
 import torch.nn.functional as F
-from opt.partial_loss import MaskedCrossEntropyLoss
+from opt.partial_loss import MaskedCrossEntropyLoss, AdaptiveMaskedCrossEntropyLoss
 import os
 import pandas as pd
 torch.manual_seed(1000)
@@ -122,18 +122,20 @@ elif args.dataset == "DTD":
                                               download=True, transform=transform)
     testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size,
                                              shuffle=False, num_workers=0)
-
+image_size = trainset.data.shape[1]
 dataclasses_num = len(trainset.classes)
 
 if args.lossfunction == "MASKEDLABEL":
     criterion = MaskedCrossEntropyLoss(alpha=0.9, num_class=dataclasses_num)
+elif args.lossfunction == "ADAPTIVESELELABEL":
+    criterion = AdaptiveMaskedCrossEntropyLoss(num_class=dataclasses_num)
 elif args.lossfunction == 'CROSSENTROPY':
     criterion = nn.CrossEntropyLoss()
-def imshow(img):
-    img = img / 2 + 0.5     # unnormalize
-    npimg = img.numpy()
-    plt.imshow(np.transpose(npimg, (1, 2, 0)))
-    plt.show()
+# def imshow(img):
+#     img = img / 2 + 0.5     # unnormalize
+#     npimg = img.numpy()
+#     plt.imshow(np.transpose(npimg, (1, 2, 0)))
+#     plt.show()
 
 
 ########################################################################
@@ -145,7 +147,9 @@ def imshow(img):
 
 from model_define.hugging_face_vit import ViTForImageClassification
 
-net = ViTForImageClassification(num_labels=dataclasses_num)
+net = ViTForImageClassification(num_labels=dataclasses_num, imagesize=image_size)
+device = torch.device('cuda:0')
+net = net.to(device if device else "cpu")
 
 if args.opt_alg == 'SGD':
     optimizer = optim.SGD(net.parameters(), lr=1e-4, momentum=0.9)
@@ -168,7 +172,9 @@ def run_test(model_path):
         for data in testloader:
             images, labels = data
             # calculate outputs by running images through the network
-            outputs = net(images)
+            images = images.to(device)
+            labels = labels.to(device)
+            outputs = net(images, interpolate_pos_encoding=True)
             # the class with the highest energy is what we choose as prediction
             _, predicted = torch.max(outputs.data, 1)
             total += labels.size(0)
@@ -185,10 +191,10 @@ for epoch in range(int(args.epoch)):  # loop over the dataset multiple times
     for i, data in enumerate(trainloader, 0):
         # get the inputs; data is a list of [inputs, labels]
         inputs, labels = data
-
+        inputs = inputs.to(device)
+        labels = labels.to(device)
         # zero the parameter gradients
         optimizer.zero_grad()
-
         # forward + backward + optimize
         outputs = net(inputs, interpolate_pos_encoding=True)
         loss = criterion(outputs, labels)
@@ -198,7 +204,9 @@ for epoch in range(int(args.epoch)):  # loop over the dataset multiple times
         running_loss += loss.item()
     model_path = os.path.join(current_folder, 'model', '{}_{}_{}_net.pth'.format(args.dataset, args.opt_alg, args.lossfunction))
     save_model(net, model_path)
-    acc.append([epoch, run_test(model_path), round(running_loss, 2)])
+    test_acc = run_test(model_path)
+    print("{} epoch test accuracy is {}".format(epoch, test_acc))
+    acc.append([epoch, test_acc, round(running_loss, 2)])
 print('Finished Training')
 result_file = os.path.join(os.path.join(current_folder, 'result', 'result_{}_{}_{}.csv'.format(args.dataset, args.opt_alg, args.lossfunction)))
 pd.DataFrame(acc).to_csv(result_file, header=["epoch", "training_acc", "training_loss"], index=False)
