@@ -31,7 +31,8 @@ class Net(nn.Module):
             nn.ReLU(),
             nn.Linear(1024, 512),
             nn.ReLU(),
-            nn.Linear(512, num_class)
+            nn.Linear(512, num_class),
+            nn.Softmax()
         )
 
     def forward(self, x):

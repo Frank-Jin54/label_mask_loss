@@ -7,7 +7,7 @@ import numpy as np
 import torch.optim as optim
 import torch.nn as nn
 import torch.nn.functional as F
-from opt.partial_loss import MaskedCrossEntropyLoss
+from opt.partial_loss import MaskedCrossEntropyLoss, AdaptiveMaskedCrossEntropyLoss
 import os
 import pandas as pd
 torch.manual_seed(1000)
@@ -129,6 +129,8 @@ if args.lossfunction == "MASKEDLABEL":
     criterion = MaskedCrossEntropyLoss(alpha=0.9, num_class=dataclasses_num)
 elif args.lossfunction == 'CROSSENTROPY':
     criterion = nn.CrossEntropyLoss()
+elif args.lossfunction == "ADAPTIVEMASKEDLABEL":
+    criterion = AdaptiveMaskedCrossEntropyLoss(alpha=0.9, num_class=dataclasses_num)
 def imshow(img):
     img = img / 2 + 0.5     # unnormalize
     npimg = img.numpy()
