@@ -129,6 +129,8 @@ if args.lossfunction == "MASKEDLABEL":
     criterion = MaskedCrossEntropyLoss(alpha=0.9, num_class=dataclasses_num)
 elif args.lossfunction == 'CROSSENTROPY':
     criterion = nn.CrossEntropyLoss()
+elif args.lossfunction == "ADAPTIVEMASKEDLABEL":
+    criterion = AdaptiveMaskedCrossEntropyLoss(alpha=0.9, num_class=dataclasses_num)
 def imshow(img):
     img = img / 2 + 0.5     # unnormalize
     npimg = img.numpy()
@@ -144,10 +146,6 @@ def imshow(img):
 
 
 from model_define.hugging_face_vit import ViTForImageClassification
-
-net = ViTForImageClassification(num_labels=dataclasses_num, imagesize=image_size)
-device = torch.device('cuda:0')
-net = net.to(device if device else "cpu")
 from model_define.defined_model import Net
 net =Net(num_class=dataclasses_num)
 
@@ -194,15 +192,18 @@ for epoch in range(int(args.epoch)):  # loop over the dataset multiple times
         optimizer.zero_grad()
 
         # forward + backward + optimize
-        outputs = net(inputs, interpolate_pos_encoding=True)
+        outputs = net(inputs)
         loss = criterion(outputs, labels)
         loss.backward()
         optimizer.step()
 
         running_loss += loss.item()
+        print("{} step loss is {}".format(i, loss.item()))
     model_path = os.path.join(current_folder, 'model', '{}_{}_{}_net.pth'.format(args.dataset, args.opt_alg, args.lossfunction))
     save_model(net, model_path)
-    acc.append([epoch, run_test(model_path), round(running_loss, 2)])
+    acc_epoch = run_test(model_path)
+    acc.append([epoch, acc_epoch, round(running_loss, 2)])
+    print("{} epoch acc is {}".format(epoch, acc_epoch))
 print('Finished Training')
 result_file = os.path.join(os.path.join(current_folder, 'result', 'result_{}_{}_{}.csv'.format(args.dataset, args.opt_alg, args.lossfunction)))
 pd.DataFrame(acc).to_csv(result_file, header=["epoch", "training_acc", "training_loss"], index=False)
