@@ -1,7 +1,8 @@
-
 from torchtext.datasets import WikiText2
 from torchtext.data.utils import get_tokenizer
 from torchtext.vocab import build_vocab_from_iterator
+import torch
+
 
 train_iter = WikiText2(split='train')
 tokenizer = get_tokenizer('basic_english')
