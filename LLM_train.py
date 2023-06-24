@@ -2,6 +2,9 @@ from torchtext.datasets import WikiText2
 from torchtext.data.utils import get_tokenizer
 from torchtext.vocab import build_vocab_from_iterator
 import torch
+from model_define.transformermodel import data_process, TransformerModel, batchify, get_batch
+import math
+import os
 
 
 train_iter = WikiText2(split='train')
@@ -38,13 +41,13 @@ model = TransformerModel(ntokens, emsize, nhead, d_hid, nlayers, dropout).to(dev
 
 import time
 
-criterion = nn.CrossEntropyLoss()
+criterion = torch.nn.CrossEntropyLoss()
 lr = 5.0  # learning rate
 optimizer = torch.optim.SGD(model.parameters(), lr=lr)
 scheduler = torch.optim.lr_scheduler.StepLR(optimizer, 1.0, gamma=0.95)
 
 
-def train(model: nn.Module) -> None:
+def train(model: torch.nn.Module) -> None:
     model.train()  # turn on train mode
     total_loss = 0.
     log_interval = 200
@@ -74,7 +77,7 @@ def train(model: nn.Module) -> None:
             total_loss = 0
             start_time = time.time()
 
-def evaluate(model: nn.Module, eval_data: Tensor) -> float:
+def evaluate(model: torch.nn.Module, eval_data: torch.Tensor) -> float:
     model.eval()  # turn on evaluation mode
     total_loss = 0.
     with torch.no_grad():
