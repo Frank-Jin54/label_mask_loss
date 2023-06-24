@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52cdb521-4820-4797-aca6-52563e9986a4" name="Changes" comment="update files">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_define/defined_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_define/defined_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/opt/partial_loss.py" beforeDir="false" afterPath="$PROJECT_DIR$/opt/partial_loss.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/training.py" beforeDir="false" afterPath="$PROJECT_DIR$/training.py" afterDir="false" />
-    </list>
+    <list default="true" id="52cdb521-4820-4797-aca6-52563e9986a4" name="Changes" comment="update file" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -744,12 +739,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686933406351</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update file">
+      <option name="closed" value="true" />
+      <created>1687648486431</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1687648486431</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update files" />
-    <option name="LAST_COMMIT_MESSAGE" value="update files" />
+    <MESSAGE value="update file" />
+    <option name="LAST_COMMIT_MESSAGE" value="update file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
