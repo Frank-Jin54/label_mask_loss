@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52cdb521-4820-4797-aca6-52563e9986a4" name="Changes" comment="update file" />
+    <list default="true" id="52cdb521-4820-4797-aca6-52563e9986a4" name="Changes" comment="rename transformer model">
+      <change beforePath="$PROJECT_DIR$/LLM_train.py" beforeDir="false" afterPath="$PROJECT_DIR$/LLM_train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_define/TransformerModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_define/transformermodel.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -747,13 +750,22 @@
       <option name="project" value="LOCAL" />
       <updated>1687648486431</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="rename transformer model">
+      <option name="closed" value="true" />
+      <created>1687649035338</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687649035338</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update files" />
     <MESSAGE value="update file" />
-    <option name="LAST_COMMIT_MESSAGE" value="update file" />
+    <MESSAGE value="rename transformer model" />
+    <option name="LAST_COMMIT_MESSAGE" value="rename transformer model" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -5,6 +5,7 @@ import torch
 from model_define.transformermodel import data_process, TransformerModel, batchify, get_batch
 import math
 import os
+from tempfile import TemporaryDirectory
 
 
 train_iter = WikiText2(split='train')
