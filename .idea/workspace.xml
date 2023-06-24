@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52cdb521-4820-4797-aca6-52563e9986a4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/model_define/hugging_face_vit.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_define/hugging_face_vit.py" afterDir="false" />
+    <list default="true" id="52cdb521-4820-4797-aca6-52563e9986a4" name="Changes" comment="update files">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_define/defined_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_define/defined_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/opt/partial_loss.py" beforeDir="false" afterPath="$PROJECT_DIR$/opt/partial_loss.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/training.py" beforeDir="false" afterPath="$PROJECT_DIR$/training.py" afterDir="false" />
     </list>
@@ -32,7 +33,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.CIFA10_ADAM_ADAPTIVE">
+  <component name="RunManager" selected="Python.KMNIST_ADAM_MASKLABEL">
     <configuration name="CIFA10_ADAM_ADAPTIVE" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -47,7 +48,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
-      <option name="PARAMETERS" value="--dataset CIFAR10 --opt_alg ADAM --lossfunction ADAPTIVESELELABEL" />
+      <option name="PARAMETERS" value="--dataset CIFAR10 --opt_alg ADAM --lossfunction ADAPTIVEMASKEDLABEL" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -55,7 +56,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="CIFAR10_SGD_ADAPTIVE" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="CIFA10_ADAM_CROSSENTROPY" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -69,7 +70,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
-      <option name="PARAMETERS" value="--dataset CIFAR10 --opt_alg SGD --lossfunction ADAPTIVESELELABEL" />
+      <option name="PARAMETERS" value="--dataset CIFAR10 --opt_alg ADAM --lossfunction CROSSENTROPY" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -77,21 +78,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="CIFAR10_SGD_CROSSENTROPY" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="CIFA10_ADAM_MASKLABEL" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/torch2/bin/python3.7" />
+      <option name="SDK_HOME" value="" />
       <option name="SDK_NAME" value="Python 3.6 (torch)" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
-      <option name="PARAMETERS" value="--dataset CIFAR10 --opt_alg SGD --lossfunction CROSSENTROPY" />
+      <option name="PARAMETERS" value="--dataset CIFAR10 --opt_alg ADAM --lossfunction MASKEDLABEL" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -99,21 +100,593 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="CIFAR10_SGD_MASKEDLABEL" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="CIFA10_RMSprop_ADAPTIVE" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/torch2/bin/python3.7" />
+      <option name="SDK_HOME" value="" />
       <option name="SDK_NAME" value="Python 3.6 (torch)" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
-      <option name="PARAMETERS" value="--dataset CIFAR10 --opt_alg SGD --lossfunction MASKEDLABEL" />
+      <option name="PARAMETERS" value="--dataset CIFAR10 --opt_alg RMSprop --lossfunction ADAPTIVEMASKEDLABEL" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="CIFA10_RMSprop_CROSSENTROPY" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset CIFAR10 --opt_alg RMSprop --lossfunction CROSSENTROPY" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="CIFA10_RMSprop_MASKLABEL" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset CIFAR10 --opt_alg RMSprop --lossfunction MASKEDLABEL" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="EMNIST_ADAM_ADAPTIVE" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset EMNIST --opt_alg ADAM --lossfunction ADAPTIVEMASKEDLABEL" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="EMNIST_ADAM_CROSSENTROPY" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset EMNIST --opt_alg ADAM --lossfunction CROSSENTROPY" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="EMNIST_ADAM_MASKLABEL" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset EMNIST --opt_alg ADAM --lossfunction MASKEDLABEL" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="EMNIST_RMSprop_ADAPTIVE" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset EMNIST --opt_alg RMSprop --lossfunction ADAPTIVEMASKEDLABEL" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="EMNIST_RMSprop_CROSSENTROPY" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset EMNIST --opt_alg RMSprop --lossfunction CROSSENTROPY" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="EMNIST_RMSprop_MASKLABEL" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset EMNIST --opt_alg RMSprop --lossfunction MASKEDLABEL" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="FASHIONMNIST_ADAM_ADAPTIVE" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset FashionMNIST --opt_alg ADAM --lossfunction ADAPTIVEMASKEDLABEL" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="FASHIONMNIST_ADAM_CROSSENTROPY" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset FashionMNIST --opt_alg ADAM --lossfunction CROSSENTROPY" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="FASHIONMNIST_ADAM_MASKEDLABEL" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset FashionMNIST --opt_alg ADAM --lossfunction MASKEDLABEL" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="FASHIONMNIST_RMSprop_ADAPTIVE" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset FashionMNIST --opt_alg RMSprop --lossfunction ADAPTIVEMASKEDLABEL" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="FASHIONMNIST_RMSprop_CROSSENTROPY" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset FashionMNIST --opt_alg RMSprop --lossfunction CROSSENTROPY" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="FASHIONMNIST_RMSprop_MASKEDLABEL" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset FashionMNIST --opt_alg RMSprop --lossfunction MASKEDLABEL" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="KMNIST_ADAM_ADAPTIVE" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset KMNIST --opt_alg ADAM --lossfunction ADAPTIVEMASKEDLABEL" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="KMNIST_ADAM_CROSSENTROPY" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset KMNIST --opt_alg ADAM --lossfunction CROSSENTROPY" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="KMNIST_ADAM_MASKLABEL" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset KMNIST --opt_alg ADAM --lossfunction MASKEDLABEL" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="KMNIST_RMSprop_ADAPTIVE" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset KMNIST --opt_alg RMSprop --lossfunction ADAPTIVEMASKEDLABEL" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="KMNIST_RMSprop_CROSSENTROPY" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset KMNIST --opt_alg RMSprop --lossfunction CROSSENTROPY" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="KMNIST_RMSprop_MASKLABEL" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset KMNIST --opt_alg RMSprop --lossfunction MASKEDLABEL" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="QMINIST_ADAM_ADAPTIVE" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset QMNIST --opt_alg ADAM --lossfunction ADAPTIVEMASKEDLABEL" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="QMINIST_ADAM_CROSSENTROPY" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset QMNIST --opt_alg ADAM --lossfunction CROSSENTROPY" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="QMINIST_ADAM_MASKLABEL" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset QMNIST --opt_alg ADAM --lossfunction MASKEDLABEL" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="QMINIST_RMSprop_ADAPTIVE" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset QMNIST --opt_alg RMSprop --lossfunction ADAPTIVEMASKEDLABEL" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="QMINIST_RMSprop_CROSSENTROPY" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset QMNIST --opt_alg RMSprop --lossfunction CROSSENTROPY" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="QMINIST_RMSprop_MASKLABEL" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset QMNIST --opt_alg RMSprop --lossfunction MASKEDLABEL" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -123,15 +696,36 @@
     </configuration>
     <list>
       <item itemvalue="Python.CIFA10_ADAM_ADAPTIVE" />
-      <item itemvalue="Python.CIFAR10_SGD_ADAPTIVE" />
-      <item itemvalue="Python.CIFAR10_SGD_CROSSENTROPY" />
-      <item itemvalue="Python.CIFAR10_SGD_MASKEDLABEL" />
+      <item itemvalue="Python.CIFA10_ADAM_CROSSENTROPY" />
+      <item itemvalue="Python.CIFA10_ADAM_MASKLABEL" />
+      <item itemvalue="Python.CIFA10_RMSprop_ADAPTIVE" />
+      <item itemvalue="Python.CIFA10_RMSprop_CROSSENTROPY" />
+      <item itemvalue="Python.CIFA10_RMSprop_MASKLABEL" />
+      <item itemvalue="Python.EMNIST_ADAM_CROSSENTROPY" />
+      <item itemvalue="Python.EMNIST_ADAM_MASKLABEL" />
+      <item itemvalue="Python.EMNIST_ADAM_ADAPTIVE" />
+      <item itemvalue="Python.EMNIST_RMSprop_CROSSENTROPY" />
+      <item itemvalue="Python.EMNIST_RMSprop_MASKLABEL" />
+      <item itemvalue="Python.EMNIST_RMSprop_ADAPTIVE" />
+      <item itemvalue="Python.KMNIST_ADAM_CROSSENTROPY" />
+      <item itemvalue="Python.KMNIST_ADAM_MASKLABEL" />
+      <item itemvalue="Python.KMNIST_ADAM_ADAPTIVE" />
+      <item itemvalue="Python.KMNIST_RMSprop_CROSSENTROPY" />
+      <item itemvalue="Python.KMNIST_RMSprop_MASKLABEL" />
+      <item itemvalue="Python.KMNIST_RMSprop_ADAPTIVE" />
+      <item itemvalue="Python.FASHIONMNIST_ADAM_ADAPTIVE" />
+      <item itemvalue="Python.FASHIONMNIST_ADAM_CROSSENTROPY" />
+      <item itemvalue="Python.FASHIONMNIST_ADAM_MASKEDLABEL" />
+      <item itemvalue="Python.FASHIONMNIST_RMSprop_ADAPTIVE" />
+      <item itemvalue="Python.FASHIONMNIST_RMSprop_CROSSENTROPY" />
+      <item itemvalue="Python.FASHIONMNIST_RMSprop_MASKEDLABEL" />
+      <item itemvalue="Python.QMINIST_ADAM_CROSSENTROPY" />
+      <item itemvalue="Python.QMINIST_ADAM_MASKLABEL" />
+      <item itemvalue="Python.QMINIST_ADAM_ADAPTIVE" />
+      <item itemvalue="Python.QMINIST_RMSprop_CROSSENTROPY" />
+      <item itemvalue="Python.QMINIST_RMSprop_MASKLABEL" />
+      <item itemvalue="Python.QMINIST_RMSprop_ADAPTIVE" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.CIFAR10_SGD_MASKEDLABEL" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -142,7 +736,20 @@
       <option name="presentableId" value="Default" />
       <updated>1679878011941</updated>
     </task>
+    <task id="LOCAL-00001" summary="update files">
+      <option name="closed" value="true" />
+      <created>1686933406351</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1686933406351</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update files" />
+    <option name="LAST_COMMIT_MESSAGE" value="update files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -154,13 +761,28 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/training.py</url>
-          <line>25</line>
+          <line>30</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/opt/partial_loss.py</url>
-          <line>318</line>
-          <option name="timeStamp" value="13" />
+          <url>file://$PROJECT_DIR$/training.py</url>
+          <line>340</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/training.py</url>
+          <line>326</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/training.py</url>
+          <line>71</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/training.py</url>
+          <line>123</line>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

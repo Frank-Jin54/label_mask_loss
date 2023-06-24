@@ -12,17 +12,22 @@ import os
 import pandas as pd
 torch.manual_seed(1000)
 torch.cuda.manual_seed(1000)
+import random
+random.seed(1000)
 
 import argparse
 
 parser = argparse.ArgumentParser(description='Train Model')
-parser.add_argument('--epoch', '-e', dest='epoch', default=50, help='epoch')
+parser.add_argument('--epoch', '-e', dest='epoch', default=20, help='epoch')
 parser.add_argument('--dataset', '-d', dest='dataset', default="CIFAR10", help='dataset', required=False)
 parser.add_argument('--opt_alg', '-a', dest='opt_alg', default="SGD", help='opt_alg', required=False)
 parser.add_argument('--lossfunction', '-l', dest='lossfunction', default="MASKEDLABEL", help='lossfunction', required=False)
 
 args = parser.parse_args()
-
+if torch.cuda.is_available():
+    device = torch.device("cuda")
+else:
+    device = torch.device("cpu")
 
 ########################################################################
 # The output of torchvision datasets are PILImage images of range [0, 1].
@@ -37,11 +42,15 @@ transform = transforms.Compose(
     [transforms.ToTensor(),
      transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
 
-batch_size = 4
+batch_size = 128
 
 current_folder = os.path.dirname(os.path.abspath(__file__))
 data_path = os.path.join(current_folder, 'data')
 if args.dataset == "CIFAR10":
+    transform = transforms.Compose(
+        [transforms.ToTensor(),
+         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
+
     trainset = torchvision.datasets.CIFAR10(root=data_path, train=True,
                                             download=True, transform=transform)
     trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size,
@@ -51,8 +60,20 @@ if args.dataset == "CIFAR10":
                                            download=True, transform=transform)
     testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size,
                                              shuffle=False, num_workers=0)
+    num_channel = 3
+    image_size = trainset.data.shape[1]
+    dataclasses_num = len(trainset.classes)
+
+    from model_define.defined_model import CIFARNet
+
+    net = CIFARNet(num_class=dataclasses_num, num_channel=num_channel)
+    net = net.to(device)
 
 elif args.dataset == "CIFAR100":
+    transform = transforms.Compose(
+        [transforms.ToTensor(),
+         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
+
     trainset = torchvision.datasets.CIFAR100(root=data_path, train=True,
                                             download=True, transform=transform)
     trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size,
@@ -62,17 +83,44 @@ elif args.dataset == "CIFAR100":
                                            download=True, transform=transform)
     testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size,
                                              shuffle=False, num_workers=0)
+    num_channel = 3
+    image_size = trainset.data.shape[1]
+    dataclasses_num = len(trainset.classes)
+
+    from model_define.defined_model import CIFARNet
+
+    net = CIFARNet(num_class=dataclasses_num, num_channel=num_channel)
+    net = net.to(device)
+
 elif args.dataset == "EMNIST":
-    trainset = torchvision.datasets.EMNIST(root=data_path, train=True,
+    transform = transforms.Compose(
+        [transforms.ToTensor(), torchvision.transforms.Normalize(
+                                 (0.1307,), (0.3081,))])
+
+    trainset = torchvision.datasets.EMNIST(root=data_path, train=True, split="mnist",
                                              download=True, transform=transform)
     trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size,
                                               shuffle=True, num_workers=0)
 
-    testset = torchvision.datasets.EMNIST(root=data_path, train=False,
-                                            download=True, transform=transform)
+    testset = torchvision.datasets.EMNIST(root=data_path, train=False, split="mnist",
+                                             download=True, transform=transform)
     testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size,
                                              shuffle=False, num_workers=0)
+
+    # define model
+    num_channel = 1
+    image_size = trainset.data.shape[1]
+    dataclasses_num = len(trainset.classes)
+
+    from model_define.defined_model import KMNISTNet
+
+    net = KMNISTNet(num_class=dataclasses_num, num_channel=num_channel)
+    net = net.to(device)
+
 elif args.dataset == "FashionMNIST":
+    transform = transforms.Compose(
+        [transforms.ToTensor(), torchvision.transforms.Normalize(
+                                 (0.1307,), (0.3081,))])
     trainset = torchvision.datasets.FashionMNIST(root=data_path, train=True,
                                            download=True, transform=transform)
     trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size,
@@ -82,6 +130,90 @@ elif args.dataset == "FashionMNIST":
                                           download=True, transform=transform)
     testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size,
                                              shuffle=False, num_workers=0)
+
+    # define model
+    num_channel = 1
+    image_size = trainset.data.shape[1]
+    dataclasses_num = len(trainset.classes)
+
+    from model_define.defined_model import KMNISTNet
+
+    net = KMNISTNet(num_class=dataclasses_num, num_channel=num_channel)
+    net = net.to(device)
+
+elif args.dataset == "MNIST":
+    transform = transforms.Compose(
+        [transforms.ToTensor(), torchvision.transforms.Normalize(
+                                 (0.1307,), (0.3081,))])
+    trainset = torchvision.datasets.MNIST(root=data_path, train=True,
+                                           download=True, transform=transform)
+    trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size,
+                                              shuffle=True, num_workers=0)
+
+    testset = torchvision.datasets.FashionMNIST(root=data_path, train=False,
+                                          download=True, transform=transform)
+    testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size,
+                                             shuffle=False, num_workers=0)
+
+    # define model
+    num_channel = 1
+    image_size = trainset.data.shape[1]
+    dataclasses_num = len(trainset.classes)
+
+    from model_define.defined_model import KMNISTNet
+
+    net = KMNISTNet(num_class=dataclasses_num, num_channel=num_channel)
+    net = net.to(device)
+
+elif args.dataset == "KMNIST":
+    transform = transforms.Compose(
+        [transforms.ToTensor(), torchvision.transforms.Normalize(
+                                 (0.1307,), (0.3081,))])
+    trainset = torchvision.datasets.KMNIST(root=data_path, train=True,
+                                           download=True, transform=transform)
+    trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size,
+                                              shuffle=True, num_workers=0)
+
+    testset = torchvision.datasets.KMNIST(root=data_path, train=False,
+                                          download=True, transform=transform)
+    testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size,
+                                             shuffle=False, num_workers=0)
+
+    # define model
+    num_channel = 1
+    image_size = trainset.data.shape[1]
+    dataclasses_num = len(trainset.classes)
+
+    from model_define.defined_model import KMNISTNet
+
+    net = KMNISTNet(num_class=dataclasses_num, num_channel=num_channel)
+    net = net.to(device)
+
+elif args.dataset == "QMNIST":
+    transform = transforms.Compose(
+        [transforms.ToTensor(), torchvision.transforms.Normalize(
+                                 (0.1307,), (0.3081,))])
+    trainset = torchvision.datasets.QMNIST(root=data_path, train=True,
+                                           download=True, transform=transform)
+    trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size,
+                                              shuffle=True, num_workers=0)
+
+    testset = torchvision.datasets.QMNIST(root=data_path, train=False,
+                                          download=True, transform=transform)
+    testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size,
+                                             shuffle=False, num_workers=0)
+
+    # define model
+    num_channel = 1
+    image_size = trainset.data.shape[1]
+    dataclasses_num = len(trainset.classes)
+
+    from model_define.defined_model import KMNISTNet
+
+    net = KMNISTNet(num_class=dataclasses_num, num_channel=num_channel)
+    net = net.to(device)
+
+
 elif args.dataset == "Caltech101":
     trainset = torchvision.datasets.Caltech101(root=data_path, train=True,
                                                  download=True, transform=transform)
@@ -122,15 +254,13 @@ elif args.dataset == "DTD":
                                               download=True, transform=transform)
     testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size,
                                              shuffle=False, num_workers=0)
-image_size = trainset.data.shape[1]
-dataclasses_num = len(trainset.classes)
 
 if args.lossfunction == "MASKEDLABEL":
-    criterion = MaskedCrossEntropyLoss(alpha=0.9, num_class=dataclasses_num)
+    criterion = MaskedCrossEntropyLoss(alpha=0.6, num_class=dataclasses_num, device=device)
 elif args.lossfunction == 'CROSSENTROPY':
     criterion = nn.CrossEntropyLoss()
 elif args.lossfunction == "ADAPTIVEMASKEDLABEL":
-    criterion = AdaptiveMaskedCrossEntropyLoss(alpha=0.9, num_class=dataclasses_num)
+    criterion = AdaptiveMaskedCrossEntropyLoss(alpha=0.6, num_class=dataclasses_num, device=device)
 def imshow(img):
     img = img / 2 + 0.5     # unnormalize
     npimg = img.numpy()
@@ -146,15 +276,14 @@ def imshow(img):
 
 
 from model_define.hugging_face_vit import ViTForImageClassification
-from model_define.defined_model import Net
-net =Net(num_class=dataclasses_num)
+
 
 if args.opt_alg == 'SGD':
-    optimizer = optim.SGD(net.parameters(), lr=1e-4, momentum=0.9)
+    optimizer = optim.SGD(net.parameters(), lr=0.01, momentum=0.5, weight_decay=0.2)
 elif args.opt_alg == "ADAM":
     optimizer = optim.Adam(net.parameters(), lr=1e-4)
-elif args.opt_alg == "RADAM":
-    optimizer = optim.RAdam(net.parameters(), lr=1e-4)
+# elif args.opt_alg == "RADAM":
+#     optimizer = optim.(net.parameters(), lr=1e-4)
 elif args.opt_alg == "RMSprop":
     optimizer = optim.RMSprop(net.parameters(), lr=1e-4)
 else:
@@ -170,10 +299,12 @@ def run_test(model_path):
         for data in testloader:
             images, labels = data
             # calculate outputs by running images through the network
+            images = images.to(device)
             outputs = net(images)
             # the class with the highest energy is what we choose as prediction
             _, predicted = torch.max(outputs.data, 1)
             total += labels.size(0)
+            labels = labels.to(device)
             correct += (predicted == labels).sum().item()
 
     return 100 * correct / total
@@ -187,21 +318,25 @@ for epoch in range(int(args.epoch)):  # loop over the dataset multiple times
     for i, data in enumerate(trainloader, 0):
         # get the inputs; data is a list of [inputs, labels]
         inputs, labels = data
-
-        # zero the parameter gradients
-        optimizer.zero_grad()
-
         # forward + backward + optimize
-        outputs = net(inputs)
+        inputs = inputs.to(device)
+        labels = labels.to(device)
+        try:
+            outputs = net(inputs)
+        except Exception as ex:
+            outputs = net(inputs)
         loss = criterion(outputs, labels)
         loss.backward()
         optimizer.step()
+        # zero the parameter gradients
+        optimizer.zero_grad()
 
         running_loss += loss.item()
-        print("{} step loss is {}".format(i, loss.item()))
+        # print("{} step loss is {}".format(i, loss.item()))
     model_path = os.path.join(current_folder, 'model', '{}_{}_{}_net.pth'.format(args.dataset, args.opt_alg, args.lossfunction))
     save_model(net, model_path)
     acc_epoch = run_test(model_path)
+    acc_epoch = round(acc_epoch, 2)
     acc.append([epoch, acc_epoch, round(running_loss, 2)])
     print("{} epoch acc is {}".format(epoch, acc_epoch))
 print('Finished Training')
