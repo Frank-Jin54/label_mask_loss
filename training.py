@@ -69,29 +69,6 @@ if args.dataset == "CIFAR10":
     net = CIFARNet(num_class=dataclasses_num, num_channel=num_channel)
     net = net.to(device)
 
-elif args.dataset == "CIFAR100":
-    transform = transforms.Compose(
-        [transforms.ToTensor(),
-         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
-
-    trainset = torchvision.datasets.CIFAR100(root=data_path, train=True,
-                                            download=True, transform=transform)
-    trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size,
-                                              shuffle=True, num_workers=0)
-
-    testset = torchvision.datasets.CIFAR100(root=data_path, train=False,
-                                           download=True, transform=transform)
-    testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size,
-                                             shuffle=False, num_workers=0)
-    num_channel = 3
-    image_size = trainset.data.shape[1]
-    dataclasses_num = len(trainset.classes)
-
-    from model_define.defined_model import CIFARNet
-
-    net = CIFARNet(num_class=dataclasses_num, num_channel=num_channel)
-    net = net.to(device)
-
 elif args.dataset == "EMNIST":
     transform = transforms.Compose(
         [transforms.ToTensor(), torchvision.transforms.Normalize(
@@ -212,55 +189,17 @@ elif args.dataset == "QMNIST":
 
     net = KMNISTNet(num_class=dataclasses_num, num_channel=num_channel)
     net = net.to(device)
+else:
+    raise Exception("Unable to support the data {}".format(args.dataset))
 
-
-elif args.dataset == "Caltech101":
-    trainset = torchvision.datasets.Caltech101(root=data_path, train=True,
-                                                 download=True, transform=transform)
-    trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size,
-                                              shuffle=True, num_workers=0)
-
-    testset = torchvision.datasets.Caltech101(root=data_path, train=False,
-                                                download=True, transform=transform)
-    testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size,
-                                             shuffle=False, num_workers=0)
-elif args.dataset == "CelebA":
-    trainset = torchvision.datasets.CelebA(root=data_path, train=True,
-                                               download=True, transform=transform)
-    trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size,
-                                              shuffle=True, num_workers=0)
-
-    testset = torchvision.datasets.CelebA(root=data_path, train=False,
-                                              download=True, transform=transform)
-    testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size,
-                                             shuffle=False, num_workers=0)
-elif args.dataset == "Country211":
-    trainset = torchvision.datasets.Country211(root=data_path, train=True,
-                                           download=True, transform=transform)
-    trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size,
-                                              shuffle=True, num_workers=0)
-
-    testset = torchvision.datasets.Country211(root=data_path, train=False,
-                                          download=True, transform=transform)
-    testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size,
-                                             shuffle=False, num_workers=0)
-elif args.dataset == "DTD":
-    trainset = torchvision.datasets.DTD(root=data_path, train=True,
-                                               download=True, transform=transform)
-    trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size,
-                                              shuffle=True, num_workers=0)
-
-    testset = torchvision.datasets.DTD(root=data_path, train=False,
-                                              download=True, transform=transform)
-    testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size,
-                                             shuffle=False, num_workers=0)
-
-if args.lossfunction == "MASKEDLABEL":
+if args.lossfunction == "LWSCE":
     criterion = MaskedCrossEntropyLoss(alpha=0.6, num_class=dataclasses_num, device=device)
 elif args.lossfunction == 'CROSSENTROPY':
     criterion = nn.CrossEntropyLoss()
-elif args.lossfunction == "ADAPTIVEMASKEDLABEL":
+elif args.lossfunction == "ALWSCE":
     criterion = AdaptiveMaskedCrossEntropyLoss(alpha=0.6, num_class=dataclasses_num, device=device)
+else:
+    raise Exception("Unaccept loss function {}".format(args.lossfunction))
 def imshow(img):
     img = img / 2 + 0.5     # unnormalize
     npimg = img.numpy()

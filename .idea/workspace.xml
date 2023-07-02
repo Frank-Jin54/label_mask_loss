@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52cdb521-4820-4797-aca6-52563e9986a4" name="Changes" comment="refactor codes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LLM_train.py" beforeDir="false" afterPath="$PROJECT_DIR$/LLM_train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_define/transformermodel.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_define/transformermodel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/training.py" beforeDir="false" afterPath="$PROJECT_DIR$/training.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,59 +16,257 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingMarkupGrave">
-    <markupCoffin contentHash="-1836026067" url="file://$PROJECT_DIR$/LLM_train.py">
-      <highlighter start="5" end="14" layer="3750" target="0">
+    <markupCoffin contentHash="-954457806" url="file://$PROJECT_DIR$/training.py">
+      <highlighter start="44" end="55" layer="3750" target="0">
         <option name="myExternalName" value="INFO_ATTRIBUTES" />
       </highlighter>
-      <highlighter start="46" end="55" layer="3750" target="0">
+      <highlighter start="63" end="74" layer="3750" target="0">
         <option name="myExternalName" value="INFO_ATTRIBUTES" />
       </highlighter>
-      <highlighter start="93" end="102" layer="3750" target="0">
+      <highlighter start="201" end="232" layer="4000" target="0">
+        <option name="myExternalName" value="NOT_USED_ELEMENT_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="231" end="232" layer="3750" target="0">
         <option name="myExternalName" value="INFO_ATTRIBUTES" />
       </highlighter>
-      <highlighter start="780" end="824" layer="3750" target="0">
+      <highlighter start="400" end="406" layer="3750" target="0">
         <option name="myExternalName" value="INFO_ATTRIBUTES" />
       </highlighter>
-      <highlighter start="1520" end="1525" layer="3750" target="0">
+      <highlighter start="433" end="439" layer="3750" target="0">
         <option name="myExternalName" value="INFO_ATTRIBUTES" />
       </highlighter>
-      <highlighter start="2194" end="2196" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="2663" end="2700" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="3411" end="3415" layer="3000" target="0">
+      <highlighter start="651" end="656" layer="3000" target="0">
         <option name="myExternalName" value="TYPO" />
       </highlighter>
-      <highlighter start="3422" end="3429" layer="3000" target="0">
+      <highlighter start="818" end="830" layer="3000" target="0">
         <option name="myExternalName" value="TYPO" />
       </highlighter>
-      <highlighter start="3465" end="3471" layer="3000" target="0">
+      <highlighter start="845" end="857" layer="3000" target="0">
         <option name="myExternalName" value="TYPO" />
       </highlighter>
-      <highlighter start="3588" end="3595" layer="3000" target="0">
+      <highlighter start="869" end="880" layer="3000" target="0">
         <option name="myExternalName" value="TYPO" />
       </highlighter>
-      <highlighter start="3673" end="3678" layer="3000" target="0">
+      <highlighter start="889" end="901" layer="3000" target="0">
         <option name="myExternalName" value="TYPO" />
       </highlighter>
-      <highlighter start="3710" end="3719" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="3855" end="3861" layer="3750" target="0">
+      <highlighter start="913" end="918" layer="3750" target="0">
         <option name="myExternalName" value="INFO_ATTRIBUTES" />
       </highlighter>
-      <highlighter start="4044" end="4047" layer="4000" target="0">
+      <highlighter start="1747" end="1752" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="1896" end="1904" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="2048" end="2059" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="2074" end="2078" layer="4000" target="0">
         <option name="myExternalName" value="WARNING_ATTRIBUTES" />
       </highlighter>
-      <highlighter start="4076" end="4081" layer="3750" target="0">
+      <highlighter start="2203" end="2210" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="2354" end="2364" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="2379" end="2383" layer="4000" target="0">
+        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="2952" end="2960" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="3079" end="3087" layer="3750" target="0">
         <option name="myExternalName" value="INFO_ATTRIBUTES" />
       </highlighter>
-      <highlighter start="5065" end="5067" layer="3750" target="0">
+      <highlighter start="3119" end="3130" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="3145" end="3149" layer="4000" target="0">
+        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="3274" end="3281" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="3401" end="3409" layer="3750" target="0">
         <option name="myExternalName" value="INFO_ATTRIBUTES" />
       </highlighter>
-      <highlighter start="5376" end="5377" layer="3750" target="0">
+      <highlighter start="3441" end="3451" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="3466" end="3470" layer="4000" target="0">
+        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="4066" end="4074" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="4182" end="4190" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="4222" end="4233" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="4248" end="4252" layer="4000" target="0">
+        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="4377" end="4384" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="4492" end="4500" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="4532" end="4542" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="4557" end="4561" layer="4000" target="0">
+        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="5150" end="5158" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="5259" end="5267" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="5299" end="5310" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="5325" end="5329" layer="4000" target="0">
+        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="5454" end="5461" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="5569" end="5577" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="5609" end="5619" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="5634" end="5638" layer="4000" target="0">
+        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="6056" end="6062" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="6228" end="6236" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="6378" end="6389" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="6404" end="6408" layer="4000" target="0">
+        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="6533" end="6540" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="6682" end="6692" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="6707" end="6711" layer="4000" target="0">
+        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="7129" end="7135" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="7301" end="7309" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="7451" end="7462" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="7477" end="7481" layer="4000" target="0">
+        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="7606" end="7613" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="7755" end="7765" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="7780" end="7784" layer="4000" target="0">
+        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="8285" end="8290" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="8412" end="8424" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="8492" end="8498" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="8601" end="8617" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="8648" end="8659" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="8664" end="8669" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="9063" end="9067" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="9063" end="9130" layer="4000" target="0">
+        <option name="myExternalName" value="NOT_USED_ELEMENT_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="9351" end="9356" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="9435" end="9440" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="9555" end="9559" layer="4000" target="0">
+        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="9643" end="9668" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="9656" end="9666" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="9874" end="9878" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="9914" end="9920" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="10049" end="10056" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="10253" end="10259" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="10325" end="10328" layer="4000" target="0">
+        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="10373" end="10405" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="10388" end="10391" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="10393" end="10403" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="10474" end="10482" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="10892" end="10901" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="10958" end="10967" layer="4000" target="0">
+        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="11315" end="11327" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="11692" end="11699" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="11822" end="11823" layer="3750" target="0">
         <option name="myExternalName" value="INFO_ATTRIBUTES" />
       </highlighter>
     </markupCoffin>
@@ -90,8 +286,8 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.LLM_train">
-    <configuration name="CIFA10_ADAM_ADAPTIVE" type="PythonConfigurationType" factoryName="Python">
+  <component name="RunManager" selected="Python.QMINIST_RMSprop_ALWSCE">
+    <configuration name="CIFA10_ADAM_ALWSCE" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -105,7 +301,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
-      <option name="PARAMETERS" value="--dataset CIFAR10 --opt_alg ADAM --lossfunction ADAPTIVEMASKEDLABEL" />
+      <option name="PARAMETERS" value="--dataset CIFAR10 --opt_alg ADAM --lossfunction ALWSCE" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -135,7 +331,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="CIFA10_ADAM_MASKLABEL" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="CIFA10_ADAM_LWSCE" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -149,7 +345,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
-      <option name="PARAMETERS" value="--dataset CIFAR10 --opt_alg ADAM --lossfunction MASKEDLABEL" />
+      <option name="PARAMETERS" value="--dataset CIFAR10 --opt_alg ADAM --lossfunction LWSCE" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -157,7 +353,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="CIFA10_RMSprop_ADAPTIVE" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="CIFA10_RMSprop_ALWSCE" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -171,7 +367,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
-      <option name="PARAMETERS" value="--dataset CIFAR10 --opt_alg RMSprop --lossfunction ADAPTIVEMASKEDLABEL" />
+      <option name="PARAMETERS" value="--dataset CIFAR10 --opt_alg RMSprop --lossfunction ALWSCE" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -201,7 +397,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="CIFA10_RMSprop_MASKLABEL" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="CIFA10_RMSprop_LWSCE" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -215,7 +411,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
-      <option name="PARAMETERS" value="--dataset CIFAR10 --opt_alg RMSprop --lossfunction MASKEDLABEL" />
+      <option name="PARAMETERS" value="--dataset CIFAR10 --opt_alg RMSprop --lossfunction LWSCE" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -223,7 +419,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="EMNIST_ADAM_ADAPTIVE" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="EMNIST_ADAM_ALWSCE" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -237,7 +433,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
-      <option name="PARAMETERS" value="--dataset EMNIST --opt_alg ADAM --lossfunction ADAPTIVEMASKEDLABEL" />
+      <option name="PARAMETERS" value="--dataset EMNIST --opt_alg ADAM --lossfunction ALWSCE" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -267,7 +463,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="EMNIST_ADAM_MASKLABEL" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="EMNIST_ADAM_LWSCE" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -281,7 +477,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
-      <option name="PARAMETERS" value="--dataset EMNIST --opt_alg ADAM --lossfunction MASKEDLABEL" />
+      <option name="PARAMETERS" value="--dataset EMNIST --opt_alg ADAM --lossfunction LWSCE" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -289,7 +485,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="EMNIST_RMSprop_ADAPTIVE" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="EMNIST_RMSprop_ALWSCE" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -303,7 +499,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
-      <option name="PARAMETERS" value="--dataset EMNIST --opt_alg RMSprop --lossfunction ADAPTIVEMASKEDLABEL" />
+      <option name="PARAMETERS" value="--dataset EMNIST --opt_alg RMSprop --lossfunction ALWSCE" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -333,7 +529,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="EMNIST_RMSprop_MASKLABEL" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="EMNIST_RMSprop_LWSCE" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -347,7 +543,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
-      <option name="PARAMETERS" value="--dataset EMNIST --opt_alg RMSprop --lossfunction MASKEDLABEL" />
+      <option name="PARAMETERS" value="--dataset EMNIST --opt_alg RMSprop --lossfunction LWSCE" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -355,7 +551,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="FASHIONMNIST_ADAM_ADAPTIVE" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="FASHIONMNIST_ADAM_ALWSCE" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -369,7 +565,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
-      <option name="PARAMETERS" value="--dataset FashionMNIST --opt_alg ADAM --lossfunction ADAPTIVEMASKEDLABEL" />
+      <option name="PARAMETERS" value="--dataset FashionMNIST --opt_alg ADAM --lossfunction ALWSCE" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -399,7 +595,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="FASHIONMNIST_ADAM_MASKEDLABEL" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="FASHIONMNIST_ADAM_LWSCE" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -413,7 +609,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
-      <option name="PARAMETERS" value="--dataset FashionMNIST --opt_alg ADAM --lossfunction MASKEDLABEL" />
+      <option name="PARAMETERS" value="--dataset FashionMNIST --opt_alg ADAM --lossfunction LWSCE" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -421,7 +617,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="FASHIONMNIST_RMSprop_ADAPTIVE" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="FASHIONMNIST_RMSprop_ALWSCE" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -435,7 +631,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
-      <option name="PARAMETERS" value="--dataset FashionMNIST --opt_alg RMSprop --lossfunction ADAPTIVEMASKEDLABEL" />
+      <option name="PARAMETERS" value="--dataset FashionMNIST --opt_alg RMSprop --lossfunction ALWSCE" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -465,7 +661,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="FASHIONMNIST_RMSprop_MASKEDLABEL" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="FASHIONMNIST_RMSprop_LWSCE" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -479,7 +675,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
-      <option name="PARAMETERS" value="--dataset FashionMNIST --opt_alg RMSprop --lossfunction MASKEDLABEL" />
+      <option name="PARAMETERS" value="--dataset FashionMNIST --opt_alg RMSprop --lossfunction LWSCE" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -487,7 +683,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="KMNIST_ADAM_ADAPTIVE" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="KMNIST_ADAM_ALWSCE" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -501,7 +697,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
-      <option name="PARAMETERS" value="--dataset KMNIST --opt_alg ADAM --lossfunction ADAPTIVEMASKEDLABEL" />
+      <option name="PARAMETERS" value="--dataset KMNIST --opt_alg ADAM --lossfunction ALWSCE" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -531,7 +727,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="KMNIST_ADAM_MASKLABEL" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="KMNIST_ADAM_LWSCE" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -545,7 +741,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
-      <option name="PARAMETERS" value="--dataset KMNIST --opt_alg ADAM --lossfunction MASKEDLABEL" />
+      <option name="PARAMETERS" value="--dataset KMNIST --opt_alg ADAM --lossfunction LWSCE" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -553,7 +749,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="KMNIST_RMSprop_ADAPTIVE" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="KMNIST_RMSprop_ALWSCE" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -567,7 +763,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
-      <option name="PARAMETERS" value="--dataset KMNIST --opt_alg RMSprop --lossfunction ADAPTIVEMASKEDLABEL" />
+      <option name="PARAMETERS" value="--dataset KMNIST --opt_alg RMSprop --lossfunction ALWSCE" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -597,7 +793,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="KMNIST_RMSprop_MASKLABEL" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="KMNIST_RMSprop_LWSCE" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -611,7 +807,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
-      <option name="PARAMETERS" value="--dataset KMNIST --opt_alg RMSprop --lossfunction MASKEDLABEL" />
+      <option name="PARAMETERS" value="--dataset KMNIST --opt_alg RMSprop --lossfunction LWSCE" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -640,7 +836,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="QMINIST_ADAM_ADAPTIVE" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="QMINIST_ADAM_ALWSCE" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -654,7 +850,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
-      <option name="PARAMETERS" value="--dataset QMNIST --opt_alg ADAM --lossfunction ADAPTIVEMASKEDLABEL" />
+      <option name="PARAMETERS" value="--dataset QMNIST --opt_alg ADAM --lossfunction ALWSCE" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -684,7 +880,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="QMINIST_ADAM_MASKLABEL" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="QMINIST_ADAM_LWSCE" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -698,7 +894,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
-      <option name="PARAMETERS" value="--dataset QMNIST --opt_alg ADAM --lossfunction MASKEDLABEL" />
+      <option name="PARAMETERS" value="--dataset QMNIST --opt_alg ADAM --lossfunction LWSCE" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -706,7 +902,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="QMINIST_RMSprop_ADAPTIVE" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="QMINIST_RMSprop_ALWSCE" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -720,7 +916,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
-      <option name="PARAMETERS" value="--dataset QMNIST --opt_alg RMSprop --lossfunction ADAPTIVEMASKEDLABEL" />
+      <option name="PARAMETERS" value="--dataset QMNIST --opt_alg RMSprop --lossfunction ALWSCE" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -750,7 +946,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="QMINIST_RMSprop_MASKLABEL" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="QMINIST_RMSprop_LWSCE" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -764,7 +960,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
-      <option name="PARAMETERS" value="--dataset QMNIST --opt_alg RMSprop --lossfunction MASKEDLABEL" />
+      <option name="PARAMETERS" value="--dataset QMNIST --opt_alg RMSprop --lossfunction LWSCE" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -773,36 +969,36 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.CIFA10_ADAM_ADAPTIVE" />
+      <item itemvalue="Python.CIFA10_ADAM_ALWSCE" />
       <item itemvalue="Python.CIFA10_ADAM_CROSSENTROPY" />
-      <item itemvalue="Python.CIFA10_ADAM_MASKLABEL" />
-      <item itemvalue="Python.CIFA10_RMSprop_ADAPTIVE" />
+      <item itemvalue="Python.CIFA10_ADAM_LWSCE" />
+      <item itemvalue="Python.CIFA10_RMSprop_ALWSCE" />
       <item itemvalue="Python.CIFA10_RMSprop_CROSSENTROPY" />
-      <item itemvalue="Python.CIFA10_RMSprop_MASKLABEL" />
+      <item itemvalue="Python.CIFA10_RMSprop_LWSCE" />
       <item itemvalue="Python.EMNIST_ADAM_CROSSENTROPY" />
-      <item itemvalue="Python.EMNIST_ADAM_MASKLABEL" />
-      <item itemvalue="Python.EMNIST_ADAM_ADAPTIVE" />
+      <item itemvalue="Python.EMNIST_ADAM_LWSCE" />
+      <item itemvalue="Python.EMNIST_ADAM_ALWSCE" />
       <item itemvalue="Python.EMNIST_RMSprop_CROSSENTROPY" />
-      <item itemvalue="Python.EMNIST_RMSprop_MASKLABEL" />
-      <item itemvalue="Python.EMNIST_RMSprop_ADAPTIVE" />
+      <item itemvalue="Python.EMNIST_RMSprop_LWSCE" />
+      <item itemvalue="Python.EMNIST_RMSprop_ALWSCE" />
       <item itemvalue="Python.KMNIST_ADAM_CROSSENTROPY" />
-      <item itemvalue="Python.KMNIST_ADAM_MASKLABEL" />
-      <item itemvalue="Python.KMNIST_ADAM_ADAPTIVE" />
+      <item itemvalue="Python.KMNIST_ADAM_LWSCE" />
+      <item itemvalue="Python.KMNIST_ADAM_ALWSCE" />
       <item itemvalue="Python.KMNIST_RMSprop_CROSSENTROPY" />
-      <item itemvalue="Python.KMNIST_RMSprop_MASKLABEL" />
-      <item itemvalue="Python.KMNIST_RMSprop_ADAPTIVE" />
-      <item itemvalue="Python.FASHIONMNIST_ADAM_ADAPTIVE" />
+      <item itemvalue="Python.KMNIST_RMSprop_LWSCE" />
+      <item itemvalue="Python.KMNIST_RMSprop_ALWSCE" />
+      <item itemvalue="Python.FASHIONMNIST_ADAM_ALWSCE" />
       <item itemvalue="Python.FASHIONMNIST_ADAM_CROSSENTROPY" />
-      <item itemvalue="Python.FASHIONMNIST_ADAM_MASKEDLABEL" />
-      <item itemvalue="Python.FASHIONMNIST_RMSprop_ADAPTIVE" />
+      <item itemvalue="Python.FASHIONMNIST_ADAM_LWSCE" />
+      <item itemvalue="Python.FASHIONMNIST_RMSprop_ALWSCE" />
       <item itemvalue="Python.FASHIONMNIST_RMSprop_CROSSENTROPY" />
-      <item itemvalue="Python.FASHIONMNIST_RMSprop_MASKEDLABEL" />
+      <item itemvalue="Python.FASHIONMNIST_RMSprop_LWSCE" />
       <item itemvalue="Python.QMINIST_ADAM_CROSSENTROPY" />
-      <item itemvalue="Python.QMINIST_ADAM_MASKLABEL" />
-      <item itemvalue="Python.QMINIST_ADAM_ADAPTIVE" />
+      <item itemvalue="Python.QMINIST_ADAM_LWSCE" />
+      <item itemvalue="Python.QMINIST_ADAM_ALWSCE" />
       <item itemvalue="Python.QMINIST_RMSprop_CROSSENTROPY" />
-      <item itemvalue="Python.QMINIST_RMSprop_MASKLABEL" />
-      <item itemvalue="Python.QMINIST_RMSprop_ADAPTIVE" />
+      <item itemvalue="Python.QMINIST_RMSprop_LWSCE" />
+      <item itemvalue="Python.QMINIST_RMSprop_ALWSCE" />
       <item itemvalue="Python.LLM_train" />
     </list>
     <recent_temporary>
@@ -860,7 +1056,15 @@
       <option name="project" value="LOCAL" />
       <updated>1687649285806</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="refactor codes">
+      <option name="closed" value="true" />
+      <created>1688339211595</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1688339211595</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -885,22 +1089,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/training.py</url>
-          <line>340</line>
+          <line>277</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/training.py</url>
-          <line>326</line>
+          <line>263</line>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/training.py</url>
-          <line>71</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/training.py</url>
-          <line>123</line>
+          <line>100</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
