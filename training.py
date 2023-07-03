@@ -2,7 +2,7 @@
 import torch
 import torchvision
 import torchvision.transforms as transforms
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import numpy as np
 import torch.optim as optim
 import torch.nn as nn
@@ -189,22 +189,18 @@ elif args.dataset == "QMNIST":
 
     net = KMNISTNet(num_class=dataclasses_num, num_channel=num_channel)
     net = net.to(device)
+
 else:
     raise Exception("Unable to support the data {}".format(args.dataset))
 
 if args.lossfunction == "LWSCE":
-    criterion = MaskedCrossEntropyLoss(alpha=0.6, num_class=dataclasses_num, device=device)
+    criterion = MaskedCrossEntropyLoss(alpha=0.8, num_class=dataclasses_num, device=device)
 elif args.lossfunction == 'CROSSENTROPY':
     criterion = nn.CrossEntropyLoss()
 elif args.lossfunction == "ALWSCE":
-    criterion = AdaptiveMaskedCrossEntropyLoss(alpha=0.6, num_class=dataclasses_num, device=device)
+    criterion = AdaptiveMaskedCrossEntropyLoss(alpha=0.8, num_class=dataclasses_num, device=device)
 else:
     raise Exception("Unaccept loss function {}".format(args.lossfunction))
-def imshow(img):
-    img = img / 2 + 0.5     # unnormalize
-    npimg = img.numpy()
-    plt.imshow(np.transpose(npimg, (1, 2, 0)))
-    plt.show()
 
 
 ########################################################################
@@ -214,7 +210,7 @@ def imshow(img):
 # take 3-channel images (instead of 1-channel images as it was defined).
 
 
-from model_define.hugging_face_vit import ViTForImageClassification
+# from model_define.hugging_face_vit import ViTForImageClassification
 
 
 if args.opt_alg == 'SGD':
@@ -251,33 +247,36 @@ def run_test(model_path):
 def save_model(net, model_path):
     torch.save(net.state_dict(), model_path)
 # 4. Train the network
-acc = []
-for epoch in range(int(args.epoch)):  # loop over the dataset multiple times
-    running_loss = 0.0
-    for i, data in enumerate(trainloader, 0):
-        # get the inputs; data is a list of [inputs, labels]
-        inputs, labels = data
-        # forward + backward + optimize
-        inputs = inputs.to(device)
-        labels = labels.to(device)
-        try:
-            outputs = net(inputs)
-        except Exception as ex:
-            outputs = net(inputs)
-        loss = criterion(outputs, labels)
-        loss.backward()
-        optimizer.step()
-        # zero the parameter gradients
-        optimizer.zero_grad()
+for t in range(10):
+    acc = []
+    for epoch in range(int(args.epoch)):  # loop over the dataset multiple times
+        running_loss = 0.0
+        for i, data in enumerate(trainloader, 0):
+            # get the inputs; data is a list of [inputs, labels]
+            inputs, labels = data
+            # forward + backward + optimize
+            inputs = inputs.to(device)
+            labels = labels.to(device)
+            try:
+                outputs = net(inputs)
+            except Exception as ex:
+                outputs = net(inputs)
+            loss = criterion(outputs, labels)
+            loss.backward()
+            optimizer.step()
+            # zero the parameter gradients
+            optimizer.zero_grad()
 
-        running_loss += loss.item()
-        # print("{} step loss is {}".format(i, loss.item()))
-    model_path = os.path.join(current_folder, 'model', '{}_{}_{}_net.pth'.format(args.dataset, args.opt_alg, args.lossfunction))
-    save_model(net, model_path)
-    acc_epoch = run_test(model_path)
-    acc_epoch = round(acc_epoch, 2)
-    acc.append([epoch, acc_epoch, round(running_loss, 2)])
-    print("{} epoch acc is {}".format(epoch, acc_epoch))
-print('Finished Training')
-result_file = os.path.join(os.path.join(current_folder, 'result', 'result_{}_{}_{}.csv'.format(args.dataset, args.opt_alg, args.lossfunction)))
-pd.DataFrame(acc).to_csv(result_file, header=["epoch", "training_acc", "training_loss"], index=False)
+            running_loss += loss.item()
+            # print("{} step loss is {}".format(i, loss.item()))
+        model_path = os.path.join(current_folder, 'model', '{}_{}_{}_net.pth'.format(args.dataset, args.opt_alg, args.lossfunction))
+        save_model(net, model_path)
+        acc_epoch = run_test(model_path)
+        acc_epoch = round(acc_epoch, 2)
+        acc.append([epoch, acc_epoch, round(running_loss, 2)])
+        print("{} epoch acc is {}".format(epoch, acc_epoch))
+    print('Finished Training')
+    result_file = os.path.join(os.path.join(current_folder, 'result', 'result_{}_{}_{}'.format(args.dataset, args.opt_alg, args.lossfunction), "{}.csv".format(str(t))))
+    if not os.path.exists(os.path.dirname(result_file)):
+        os.makedirs(os.path.dirname(result_file))
+    pd.DataFrame(acc).to_csv(result_file, header=["epoch", "training_acc", "training_loss"], index=False)

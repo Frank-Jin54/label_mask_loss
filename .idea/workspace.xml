@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52cdb521-4820-4797-aca6-52563e9986a4" name="Changes" comment="refactor codes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/training_result.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/training.py" beforeDir="false" afterPath="$PROJECT_DIR$/training.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,257 +18,245 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingMarkupGrave">
-    <markupCoffin contentHash="-954457806" url="file://$PROJECT_DIR$/training.py">
+    <markupCoffin contentHash="-129973344" url="file://$PROJECT_DIR$/training.py">
       <highlighter start="44" end="55" layer="3750" target="0">
         <option name="myExternalName" value="INFO_ATTRIBUTES" />
       </highlighter>
       <highlighter start="63" end="74" layer="3750" target="0">
         <option name="myExternalName" value="INFO_ATTRIBUTES" />
       </highlighter>
-      <highlighter start="201" end="232" layer="4000" target="0">
+      <highlighter start="134" end="152" layer="4000" target="0">
         <option name="myExternalName" value="NOT_USED_ELEMENT_ATTRIBUTES" />
       </highlighter>
-      <highlighter start="231" end="232" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="400" end="406" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="433" end="439" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="651" end="656" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="818" end="830" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="845" end="857" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="869" end="880" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="889" end="901" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="913" end="918" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="1747" end="1752" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="1896" end="1904" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="2048" end="2059" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="2074" end="2078" layer="4000" target="0">
-        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="2203" end="2210" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="2354" end="2364" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="2379" end="2383" layer="4000" target="0">
-        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="2952" end="2960" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="3079" end="3087" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="3119" end="3130" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="3145" end="3149" layer="4000" target="0">
-        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="3274" end="3281" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="3401" end="3409" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="3441" end="3451" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="3466" end="3470" layer="4000" target="0">
-        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="4066" end="4074" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="4182" end="4190" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="4222" end="4233" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="4248" end="4252" layer="4000" target="0">
-        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="4377" end="4384" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="4492" end="4500" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="4532" end="4542" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="4557" end="4561" layer="4000" target="0">
-        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="5150" end="5158" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="5259" end="5267" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="5299" end="5310" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="5325" end="5329" layer="4000" target="0">
-        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="5454" end="5461" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="5569" end="5577" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="5609" end="5619" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="5634" end="5638" layer="4000" target="0">
-        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="6056" end="6062" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="6228" end="6236" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="6378" end="6389" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="6404" end="6408" layer="4000" target="0">
-        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="6533" end="6540" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="6682" end="6692" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="6707" end="6711" layer="4000" target="0">
-        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="7129" end="7135" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="7301" end="7309" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="7451" end="7462" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="7477" end="7481" layer="4000" target="0">
-        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="7606" end="7613" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="7755" end="7765" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="7780" end="7784" layer="4000" target="0">
-        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="8285" end="8290" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="8412" end="8424" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="8492" end="8498" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="8601" end="8617" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="8648" end="8659" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="8664" end="8669" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="9063" end="9067" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="9063" end="9130" layer="4000" target="0">
+      <highlighter start="203" end="234" layer="4000" target="0">
         <option name="myExternalName" value="NOT_USED_ELEMENT_ATTRIBUTES" />
       </highlighter>
-      <highlighter start="9351" end="9356" layer="3000" target="0">
+      <highlighter start="233" end="234" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="402" end="408" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="435" end="441" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="653" end="658" layer="3000" target="0">
         <option name="myExternalName" value="TYPO" />
       </highlighter>
-      <highlighter start="9435" end="9440" layer="3000" target="0">
+      <highlighter start="820" end="832" layer="3000" target="0">
         <option name="myExternalName" value="TYPO" />
       </highlighter>
-      <highlighter start="9555" end="9559" layer="4000" target="0">
+      <highlighter start="847" end="859" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="871" end="882" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="891" end="903" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="915" end="920" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="1749" end="1754" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="1898" end="1906" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="2050" end="2061" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="2076" end="2080" layer="4000" target="0">
         <option name="myExternalName" value="WARNING_ATTRIBUTES" />
       </highlighter>
-      <highlighter start="9643" end="9668" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      <highlighter start="2205" end="2212" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
       </highlighter>
-      <highlighter start="9656" end="9666" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      <highlighter start="2356" end="2366" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
       </highlighter>
-      <highlighter start="9874" end="9878" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="9914" end="9920" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="10049" end="10056" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="10253" end="10259" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="10325" end="10328" layer="4000" target="0">
+      <highlighter start="2381" end="2385" layer="4000" target="0">
         <option name="myExternalName" value="WARNING_ATTRIBUTES" />
       </highlighter>
-      <highlighter start="10373" end="10405" layer="3750" target="0">
+      <highlighter start="2954" end="2962" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="3081" end="3089" layer="3750" target="0">
         <option name="myExternalName" value="INFO_ATTRIBUTES" />
       </highlighter>
-      <highlighter start="10388" end="10391" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      <highlighter start="3121" end="3132" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
       </highlighter>
-      <highlighter start="10393" end="10403" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="10474" end="10482" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="10892" end="10901" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="10958" end="10967" layer="4000" target="0">
+      <highlighter start="3147" end="3151" layer="4000" target="0">
         <option name="myExternalName" value="WARNING_ATTRIBUTES" />
       </highlighter>
-      <highlighter start="11315" end="11327" layer="3750" target="0">
+      <highlighter start="3276" end="3283" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="3403" end="3411" layer="3750" target="0">
         <option name="myExternalName" value="INFO_ATTRIBUTES" />
       </highlighter>
-      <highlighter start="11692" end="11699" layer="3750" target="0">
+      <highlighter start="3443" end="3453" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="3468" end="3472" layer="4000" target="0">
+        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="4068" end="4076" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="4184" end="4192" layer="3750" target="0">
         <option name="myExternalName" value="INFO_ATTRIBUTES" />
       </highlighter>
-      <highlighter start="11822" end="11823" layer="3750" target="0">
+      <highlighter start="4224" end="4235" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="4250" end="4254" layer="4000" target="0">
+        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="4379" end="4386" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="4494" end="4502" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="4534" end="4544" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="4559" end="4563" layer="4000" target="0">
+        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="5152" end="5160" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="5261" end="5269" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="5301" end="5312" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="5327" end="5331" layer="4000" target="0">
+        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="5456" end="5463" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="5571" end="5579" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="5611" end="5621" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="5636" end="5640" layer="4000" target="0">
+        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="6058" end="6064" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="6230" end="6238" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="6380" end="6391" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="6406" end="6410" layer="4000" target="0">
+        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="6535" end="6542" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="6684" end="6694" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="6709" end="6713" layer="4000" target="0">
+        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="7131" end="7137" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="7303" end="7311" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="7453" end="7464" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="7479" end="7483" layer="4000" target="0">
+        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="7608" end="7615" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="7757" end="7767" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="7782" end="7786" layer="4000" target="0">
+        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="8288" end="8293" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="8415" end="8427" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="8495" end="8501" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="8631" end="8639" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="9292" end="9297" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="9376" end="9381" layer="3000" target="0">
+        <option name="myExternalName" value="TYPO" />
+      </highlighter>
+      <highlighter start="9496" end="9500" layer="4000" target="0">
+        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="9584" end="9609" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="9597" end="9607" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="9815" end="9819" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="9855" end="9861" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="9990" end="9997" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="10194" end="10200" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="10266" end="10269" layer="4000" target="0">
+        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="10314" end="10346" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="10329" end="10332" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="10334" end="10344" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="10415" end="10434" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="10901" end="10910" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="11360" end="11372" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="11761" end="11768" layer="3750" target="0">
+        <option name="myExternalName" value="INFO_ATTRIBUTES" />
+      </highlighter>
+      <highlighter start="12027" end="12028" layer="3750" target="0">
         <option name="myExternalName" value="INFO_ATTRIBUTES" />
       </highlighter>
     </markupCoffin>
@@ -286,7 +276,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.QMINIST_RMSprop_ALWSCE">
+  <component name="RunManager" selected="Python.CIFA10_ADAM_LWSCE">
     <configuration name="CIFA10_ADAM_ALWSCE" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -295,7 +285,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="SDK_NAME" value="Python 3.7 (torch2)" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -339,7 +329,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="SDK_NAME" value="Python 3.7 (torch2)" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -361,7 +351,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="SDK_NAME" value="Python 3.7 (torch2)" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -405,13 +395,57 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="SDK_NAME" value="Python 3.7 (torch2)" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
       <option name="PARAMETERS" value="--dataset CIFAR10 --opt_alg RMSprop --lossfunction LWSCE" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Caltech101_RMSprop_CROSSENTROPY" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset Caltech101 --opt_alg RMSprop --lossfunction CROSSENTROPY" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Caltech101_RMSprop_LWSCE" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset Caltech101 --opt_alg RMSprop --lossfunction LWSCE" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -427,7 +461,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="SDK_NAME" value="Python 3.7 (torch2)" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -471,7 +505,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="SDK_NAME" value="Python 3.7 (torch2)" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -537,7 +571,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="SDK_NAME" value="Python 3.7 (torch2)" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -999,6 +1033,8 @@
       <item itemvalue="Python.QMINIST_RMSprop_CROSSENTROPY" />
       <item itemvalue="Python.QMINIST_RMSprop_LWSCE" />
       <item itemvalue="Python.QMINIST_RMSprop_ALWSCE" />
+      <item itemvalue="Python.Caltech101_RMSprop_LWSCE" />
+      <item itemvalue="Python.Caltech101_RMSprop_CROSSENTROPY" />
       <item itemvalue="Python.LLM_train" />
     </list>
     <recent_temporary>
@@ -1089,13 +1125,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/training.py</url>
-          <line>277</line>
+          <line>276</line>
           <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/training.py</url>
-          <line>263</line>
-          <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/training.py</url>
