@@ -8,7 +8,7 @@ import torch.optim as optim
 import torch.nn as nn
 import torch.nn.functional as F
 from opt.partial_loss import MaskedCrossEntropyLoss, AdaptiveMaskedCrossEntropyLoss
-from model_define.defined_model import KMNISTNet, CIFARNet
+from model_define.defined_model import KMNISTNet, CIFARNet, CIFARNet_SelfDirect
 # from model_define.hugging_face_vit import ViTForImageClassification
 import torchvision.models as models
 import os
@@ -67,11 +67,10 @@ if args.dataset == "CIFAR10":
     image_size = trainset.data.shape[1]
     dataclasses_num = len(trainset.classes)
 
-    net = CIFARNet(num_class=dataclasses_num, num_channel=num_channel)
+    net = CIFARNet_SelfDirect(num_class=dataclasses_num, num_channel=num_channel)
     net = net.to(device)
 
-
-if args.dataset == "CIFAR100":
+elif args.dataset == "CIFAR100":
     transform = transforms.Compose(
         [transforms.ToTensor(),
          transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
@@ -259,7 +258,7 @@ def run_test(model_path):
             images, labels = data
             # calculate outputs by running images through the network
             images = images.to(device)
-            outputs = net(images)
+            _, _, _, outputs = net(images)
             # the class with the highest energy is what we choose as prediction
             _, predicted = torch.max(outputs.data, 1)
             total += labels.size(0)
@@ -293,10 +292,10 @@ for t in range(10): # train model 10 times
             inputs = inputs.to(device)
             labels = labels.to(device)
             try:
-                outputs = net(inputs)
+                res1, res2, res3, outputs = net(inputs)
             except Exception as ex:
                 outputs = net(inputs)
-            loss = criterion(outputs, labels)
+            loss = criterion(outputs, labels) + torch.sum(torch.square(res1)) + torch.sum(torch.square(res2)) + torch.sum(torch.square(res3))
             loss.backward()
             optimizer.step()
             # zero the parameter gradients
@@ -312,7 +311,7 @@ for t in range(10): # train model 10 times
         acc.append([epoch, acc_epoch, round(running_loss, 2), L2])
         print("{} epoch acc is {}, L2 is {}".format(epoch, acc_epoch, L2))
     print('Finished Training')
-    result_file = os.path.join(os.path.join(current_folder, 'result', 'result_{}_{}_{}'.format(args.dataset, args.opt_alg, args.lossfunction), "{}.csv".format(str(t))))
+    result_file = os.path.join(os.path.join(current_folder, 'result', 'result_self_direct'.format(args.dataset, args.opt_alg, args.lossfunction), "{}.csv".format(str(t))))
     if not os.path.exists(os.path.dirname(result_file)):
         os.makedirs(os.path.dirname(result_file))
     pd.DataFrame(acc).to_csv(result_file, header=["epoch", "training_acc", "training_loss", "L2"], index=False)
@@ -323,6 +322,6 @@ for t in range(10): # train model 10 times
         net = net.to(device)
         optimizer = defineopt(net)
     else:
-        net = CIFARNet(num_class=dataclasses_num, num_channel=num_channel)
+        net = CIFARNet_SelfDirect(num_class=dataclasses_num, num_channel=num_channel)
         net = net.to(device)
         optimizer = defineopt(net)

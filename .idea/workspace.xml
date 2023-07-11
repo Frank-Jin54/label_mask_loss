@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52cdb521-4820-4797-aca6-52563e9986a4" name="Changes" comment="refactor codes">
+      <change afterPath="$PROJECT_DIR$/model_define/deep_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tmp/selfdirect.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/training_result.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LLM_train.py" beforeDir="false" afterPath="$PROJECT_DIR$/LLM_train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_define/defined_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_define/defined_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_define/hugging_face_vit.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_define/hugging_face_vit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opt/partial_loss.py" beforeDir="false" afterPath="$PROJECT_DIR$/opt/partial_loss.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/training.py" beforeDir="false" afterPath="$PROJECT_DIR$/training.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -14,251 +20,21 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingMarkupGrave">
-    <markupCoffin contentHash="-129973344" url="file://$PROJECT_DIR$/training.py">
-      <highlighter start="44" end="55" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="63" end="74" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="134" end="152" layer="4000" target="0">
-        <option name="myExternalName" value="NOT_USED_ELEMENT_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="203" end="234" layer="4000" target="0">
-        <option name="myExternalName" value="NOT_USED_ELEMENT_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="233" end="234" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="402" end="408" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="435" end="441" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="653" end="658" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="820" end="832" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="847" end="859" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="871" end="882" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="891" end="903" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="915" end="920" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="1749" end="1754" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="1898" end="1906" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="2050" end="2061" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="2076" end="2080" layer="4000" target="0">
-        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="2205" end="2212" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="2356" end="2366" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="2381" end="2385" layer="4000" target="0">
-        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="2954" end="2962" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="3081" end="3089" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="3121" end="3132" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="3147" end="3151" layer="4000" target="0">
-        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="3276" end="3283" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="3403" end="3411" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="3443" end="3453" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="3468" end="3472" layer="4000" target="0">
-        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="4068" end="4076" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="4184" end="4192" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="4224" end="4235" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="4250" end="4254" layer="4000" target="0">
-        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="4379" end="4386" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="4494" end="4502" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="4534" end="4544" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="4559" end="4563" layer="4000" target="0">
-        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="5152" end="5160" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="5261" end="5269" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="5301" end="5312" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="5327" end="5331" layer="4000" target="0">
-        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="5456" end="5463" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="5571" end="5579" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="5611" end="5621" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="5636" end="5640" layer="4000" target="0">
-        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="6058" end="6064" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="6230" end="6238" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="6380" end="6391" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="6406" end="6410" layer="4000" target="0">
-        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="6535" end="6542" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="6684" end="6694" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="6709" end="6713" layer="4000" target="0">
-        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="7131" end="7137" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="7303" end="7311" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="7453" end="7464" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="7479" end="7483" layer="4000" target="0">
-        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="7608" end="7615" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="7757" end="7767" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="7782" end="7786" layer="4000" target="0">
-        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="8288" end="8293" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="8415" end="8427" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="8495" end="8501" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="8631" end="8639" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="9292" end="9297" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="9376" end="9381" layer="3000" target="0">
-        <option name="myExternalName" value="TYPO" />
-      </highlighter>
-      <highlighter start="9496" end="9500" layer="4000" target="0">
-        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="9584" end="9609" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="9597" end="9607" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="9815" end="9819" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="9855" end="9861" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="9990" end="9997" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="10194" end="10200" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="10266" end="10269" layer="4000" target="0">
-        <option name="myExternalName" value="WARNING_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="10314" end="10346" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="10329" end="10332" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="10334" end="10344" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="10415" end="10434" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="10901" end="10910" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="11360" end="11372" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="11761" end="11768" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="12027" end="12028" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
+    <markupCoffin contentHash="39765260" url="file://$PROJECT_DIR$/.gitignore">
+      <highlighter start="0" end="6" layer="3000" target="1" gutterIconUrl="jar:file:/snap/pycharm-community/337/lib/app-client.jar!/nodes/folder.svg" />
+      <highlighter start="15" end="20" layer="3000" target="1" gutterIconUrl="jar:file:/snap/pycharm-community/337/lib/app-client.jar!/nodes/folder.svg" />
+      <highlighter start="21" end="25" layer="3000" target="1" gutterIconUrl="jar:file:/snap/pycharm-community/337/lib/app-client.jar!/nodes/folder.svg" />
     </markupCoffin>
   </component>
   <component name="MarkdownSettingsMigration">
@@ -272,11 +48,60 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/josh/paper/label_mask_loss/training.py&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/josh/paper/label_mask_loss/selfdirect.py&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.CIFA10_ADAM_LWSCE">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data/imagenet" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.CIFA10_SELF_DIRECT_CROSSENTROPY">
+    <configuration name="CIFA100_ADAM_CROSSENTROPY" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset CIFAR100 --opt_alg ADAM --lossfunction CROSSENTROPY" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="CIFA100_ADAM_LWACE" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset CIFAR100 --opt_alg RMSprop --lossfunction LWSCE" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="CIFA10_ADAM_ALWSCE" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -307,7 +132,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="SDK_NAME" value="Python 3.7 (torch2)" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -409,6 +234,50 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="CIFA10_SELF_DIRECT" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tmp/selfdirect.py" />
+      <option name="PARAMETERS" value="--dataset CIFAR10 --opt_alg ADAM --lossfunction LWSCE" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="CIFA10_SELF_DIRECT_CROSSENTROPY" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tmp/selfdirect.py" />
+      <option name="PARAMETERS" value="--dataset CIFAR10 --opt_alg ADAM --lossfunction CROSSENTROPY" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Caltech101_RMSprop_CROSSENTROPY" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -483,7 +352,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="SDK_NAME" value="Python 3.7 (torch2)" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -710,6 +579,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
       <option name="PARAMETERS" value="--dataset FashionMNIST --opt_alg RMSprop --lossfunction LWSCE" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="IMAGENET_ADAM_CROSSENTROPY" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="torch2" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset IMAGENET --opt_alg RMSprop --lossfunction CROSSENTROPY" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -1002,19 +893,47 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="imagenet" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/model_define/deep_model.py" />
+      <option name="PARAMETERS" value="-a resnet18 data/imagenet" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Python.imagenet" />
       <item itemvalue="Python.CIFA10_ADAM_ALWSCE" />
       <item itemvalue="Python.CIFA10_ADAM_CROSSENTROPY" />
       <item itemvalue="Python.CIFA10_ADAM_LWSCE" />
+      <item itemvalue="Python.CIFA10_SELF_DIRECT" />
+      <item itemvalue="Python.CIFA10_SELF_DIRECT_CROSSENTROPY" />
       <item itemvalue="Python.CIFA10_RMSprop_ALWSCE" />
       <item itemvalue="Python.CIFA10_RMSprop_CROSSENTROPY" />
       <item itemvalue="Python.CIFA10_RMSprop_LWSCE" />
+      <item itemvalue="Python.CIFA100_ADAM_CROSSENTROPY" />
+      <item itemvalue="Python.CIFA100_ADAM_LWACE" />
       <item itemvalue="Python.EMNIST_ADAM_CROSSENTROPY" />
       <item itemvalue="Python.EMNIST_ADAM_LWSCE" />
       <item itemvalue="Python.EMNIST_ADAM_ALWSCE" />
       <item itemvalue="Python.EMNIST_RMSprop_CROSSENTROPY" />
       <item itemvalue="Python.EMNIST_RMSprop_LWSCE" />
       <item itemvalue="Python.EMNIST_RMSprop_ALWSCE" />
+      <item itemvalue="Python.IMAGENET_ADAM_CROSSENTROPY" />
       <item itemvalue="Python.KMNIST_ADAM_CROSSENTROPY" />
       <item itemvalue="Python.KMNIST_ADAM_LWSCE" />
       <item itemvalue="Python.KMNIST_ADAM_ALWSCE" />
@@ -1100,7 +1019,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688339211595</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="refactor codes">
+      <option name="closed" value="true" />
+      <created>1688343758925</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1688343758925</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -1120,18 +1047,38 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/training.py</url>
-          <line>30</line>
+          <line>36</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/training.py</url>
-          <line>276</line>
-          <option name="timeStamp" value="20" />
+          <line>97</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/model_define/hugging_face_vit.py</url>
+          <line>20</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/model_define/hugging_face_vit.py</url>
+          <line>11</line>
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/training.py</url>
-          <line>100</line>
-          <option name="timeStamp" value="35" />
+          <line>274</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tmp/selfdirect.py</url>
+          <line>51</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tmp/selfdirect.py</url>
+          <line>297</line>
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -79,8 +79,7 @@ class AdaptiveMaskedCrossEntropyLoss(nn.CrossEntropyLoss):
                  num_class: int = 10) -> None:
         super().__init__(weight, size_average, ignore_index, reduce, reduction)
         P0 = (1 - alpha) / num_class
-        P1 = alpha
-        self.expectation = torch.tensor(P0 * 3)
+        self.expectation = torch.tensor(P0 * 2)
         self.zero = torch.tensor(0.0)
         if device:
             self.expectation = self.expectation.to(device)
