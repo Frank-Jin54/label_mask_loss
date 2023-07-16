@@ -5,14 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52cdb521-4820-4797-aca6-52563e9986a4" name="Changes" comment="refactor codes">
-      <change afterPath="$PROJECT_DIR$/model_define/deep_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/selfdirect.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opt/adammask.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opt/customeropt.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LLM_train.py" beforeDir="false" afterPath="$PROJECT_DIR$/LLM_train.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model_define/defined_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_define/defined_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_define/hugging_face_vit.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_define/hugging_face_vit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/opt/partial_loss.py" beforeDir="false" afterPath="$PROJECT_DIR$/opt/partial_loss.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opt/partial_loss.py" beforeDir="false" afterPath="$PROJECT_DIR$/loss/partial_loss.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opt/partial_opt.py" beforeDir="false" afterPath="$PROJECT_DIR$/loss/partial_opt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opt/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/loss/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_CIFAR10_ADAM_ADAPTIVEMASKEDLABEL.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_CIFAR10_ADAM_CROSSENTROPY.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_CIFAR10_ADAM_MASKEDLABEL.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_CIFAR10_RMSprop_ADAPTIVEMASKEDLABEL.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_CIFAR10_RMSprop_CROSSENTROPY.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_CIFAR10_RMSprop_MASKEDLABEL.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_EMNIST_ADAM_ADAPTIVEMASKEDLABEL.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_EMNIST_ADAM_CROSSENTROPY.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_EMNIST_ADAM_MASKEDLABEL.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_EMNIST_RMSprop_ADAPTIVEMASKEDLABEL.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_EMNIST_RMSprop_CROSSENTROPY.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_EMNIST_RMSprop_MASKEDLABEL.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_FashionMNIST_ADAM_ADAPTIVEMASKEDLABEL.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_FashionMNIST_ADAM_CROSSENTROPY.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_FashionMNIST_ADAM_MASKEDLABEL.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_FashionMNIST_RMSprop_ADAPTIVEMASKEDLABEL.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_FashionMNIST_RMSprop_CROSSENTROPY.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_FashionMNIST_RMSprop_MASKEDLABEL.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_KMNIST_ADAM_ADAPTIVEMASKEDLABEL.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_KMNIST_ADAM_CROSSENTROPY.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_KMNIST_ADAM_MASKEDLABEL.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_KMNIST_RMSprop_ADAPTIVEMASKEDLABEL.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_KMNIST_RMSprop_CROSSENTROPY.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_KMNIST_RMSprop_MASKEDLABEL.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_QMNIST_ADAM_ADAPTIVEMASKEDLABEL.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_QMNIST_ADAM_CROSSENTROPY.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_QMNIST_ADAM_MASKEDLABEL.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_QMNIST_RMSprop_ADAPTIVEMASKEDLABEL.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_QMNIST_RMSprop_CROSSENTROPY.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_QMNIST_RMSprop_MASKEDLABEL.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/selfdirect.py" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/selfdirect.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/training.py" beforeDir="false" afterPath="$PROJECT_DIR$/training.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,13 +60,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingMarkupGrave">
-    <markupCoffin contentHash="39765260" url="file://$PROJECT_DIR$/.gitignore">
-      <highlighter start="0" end="6" layer="3000" target="1" gutterIconUrl="jar:file:/snap/pycharm-community/337/lib/app-client.jar!/nodes/folder.svg" />
-      <highlighter start="15" end="20" layer="3000" target="1" gutterIconUrl="jar:file:/snap/pycharm-community/337/lib/app-client.jar!/nodes/folder.svg" />
-      <highlighter start="21" end="25" layer="3000" target="1" gutterIconUrl="jar:file:/snap/pycharm-community/337/lib/app-client.jar!/nodes/folder.svg" />
-    </markupCoffin>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -45,19 +68,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/josh/paper/label_mask_loss/selfdirect.py&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/josh/paper/label_mask_loss",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/data/imagenet" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.CIFA10_SELF_DIRECT_CROSSENTROPY">
+  <component name="RunManager" selected="Python.CIFA100_ADAM_LWACE">
     <configuration name="CIFA100_ADAM_CROSSENTROPY" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -89,12 +112,12 @@
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="SDK_NAME" value="Python 3.6 (torch)" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
-      <option name="PARAMETERS" value="--dataset CIFAR100 --opt_alg RMSprop --lossfunction LWSCE" />
+      <option name="PARAMETERS" value="--dataset CIFAR100 --opt_alg ADAM --lossfunction LWSCE" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -513,6 +536,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
       <option name="PARAMETERS" value="--dataset FashionMNIST --opt_alg ADAM --lossfunction LWSCE" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="FASHIONMNIST_DIRECT_NORM" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6 (torch)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tmp/selfdirect.py" />
+      <option name="PARAMETERS" value="--dataset FashionMNIST --opt_alg ADAM --lossfunction CROSSENTROPY --model norm" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -942,6 +987,7 @@
       <item itemvalue="Python.KMNIST_RMSprop_ALWSCE" />
       <item itemvalue="Python.FASHIONMNIST_ADAM_ALWSCE" />
       <item itemvalue="Python.FASHIONMNIST_ADAM_CROSSENTROPY" />
+      <item itemvalue="Python.FASHIONMNIST_DIRECT_NORM" />
       <item itemvalue="Python.FASHIONMNIST_ADAM_LWSCE" />
       <item itemvalue="Python.FASHIONMNIST_RMSprop_ALWSCE" />
       <item itemvalue="Python.FASHIONMNIST_RMSprop_CROSSENTROPY" />
@@ -1047,12 +1093,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/training.py</url>
-          <line>36</line>
+          <line>38</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/training.py</url>
-          <line>97</line>
+          <line>99</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1067,18 +1113,28 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/training.py</url>
-          <line>274</line>
+          <line>276</line>
           <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/model_define/defined_model.py</url>
+          <line>180</line>
+          <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tmp/selfdirect.py</url>
           <line>51</line>
-          <option name="timeStamp" value="44" />
+          <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tmp/selfdirect.py</url>
-          <line>297</line>
-          <option name="timeStamp" value="45" />
+          <url>file://$PROJECT_DIR$/loss/partial_loss.py</url>
+          <line>53</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/anaconda3/envs/torch2/lib/python3.7/site-packages/torch/nn/functional.py</url>
+          <line>2407</line>
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

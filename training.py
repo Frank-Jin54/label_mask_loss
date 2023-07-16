@@ -7,7 +7,7 @@ import numpy as np
 import torch.optim as optim
 import torch.nn as nn
 import torch.nn.functional as F
-from opt.partial_loss import MaskedCrossEntropyLoss, AdaptiveMaskedCrossEntropyLoss
+from loss.partial_loss import MaskedCrossEntropyLoss, AdaptiveMaskedCrossEntropyLoss
 from model_define.defined_model import KMNISTNet, CIFARNet
 # from model_define.hugging_face_vit import ViTForImageClassification
 import torchvision.models as models
@@ -28,6 +28,8 @@ parser.add_argument('--epoch', '-e', dest='epoch', default=40, help='epoch')
 parser.add_argument('--dataset', '-d', dest='dataset', default="CIFAR10", help='dataset', required=False)
 parser.add_argument('--opt_alg', '-a', dest='opt_alg', default="SGD", help='opt_alg', required=False)
 parser.add_argument('--lossfunction', '-l', dest='lossfunction', default="MASKEDLABEL", help='lossfunction', required=False)
+parser.add_argument('--smoothing', '-s', dest='smoothing', default=0, help='label smoothing')
+
 
 args = parser.parse_args()
 if torch.cuda.is_available():
@@ -71,7 +73,7 @@ if args.dataset == "CIFAR10":
     net = net.to(device)
 
 
-if args.dataset == "CIFAR100":
+elif args.dataset == "CIFAR100":
     transform = transforms.Compose(
         [transforms.ToTensor(),
          transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
@@ -89,8 +91,8 @@ if args.dataset == "CIFAR100":
     image_size = trainset.data.shape[1]
     dataclasses_num = len(trainset.classes)
 
-    # net = CIFARNet(num_class=dataclasses_num, num_channel=num_channel)
-    net = ViTForImageClassification(num_labels=dataclasses_num)
+    net = CIFARNet(num_class=dataclasses_num, num_channel=num_channel)
+    # net = ViTForImageClassification(num_labels=dataclasses_num)
     net = net.to(device)
 
 elif args.dataset == 'IMAGENET':
@@ -217,11 +219,11 @@ else:
     raise Exception("Unable to support the data {}".format(args.dataset))
 
 if args.lossfunction == "LWSCE":
-    criterion = MaskedCrossEntropyLoss(alpha=0.5, num_class=dataclasses_num, device=device)
+    criterion = MaskedCrossEntropyLoss(alpha=0.2, num_class=dataclasses_num, device=device)
 elif args.lossfunction == 'CROSSENTROPY':
     criterion = nn.CrossEntropyLoss()
 elif args.lossfunction == "ALWSCE":
-    criterion = AdaptiveMaskedCrossEntropyLoss(alpha=0.5, num_class=dataclasses_num, device=device)
+    criterion = AdaptiveMaskedCrossEntropyLoss(alpha=0.2, num_class=dataclasses_num, device=device)
 else:
     raise Exception("Unaccept loss function {}".format(args.lossfunction))
 
@@ -239,11 +241,14 @@ def defineopt(model):
     if args.opt_alg == 'SGD':
         optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.5, weight_decay=0.2)
     elif args.opt_alg == "ADAM":
-        optimizer = optim.Adam(model.parameters(), lr=1e-4)
+        optimizer = optim.Adam(model.parameters(), lr=1e-5)
     # elif args.opt_alg == "RADAM":
     #     optimizer = optim.(net.parameters(), lr=1e-4)
     elif args.opt_alg == "RMSprop":
         optimizer = optim.RMSprop(model.parameters(), lr=1e-4)
+    elif args.opt_alg == "LWADAM":
+        from opt.customeropt import LWADAM
+        optimizer = LWADAM(model.parameters(), lr=1e-4)
     else:
         raise Exception("Not accept optimizer of {}".args.opt_alg)
     return optimizer
@@ -312,7 +317,7 @@ for t in range(10): # train model 10 times
         acc.append([epoch, acc_epoch, round(running_loss, 2), L2])
         print("{} epoch acc is {}, L2 is {}".format(epoch, acc_epoch, L2))
     print('Finished Training')
-    result_file = os.path.join(os.path.join(current_folder, 'result', 'result_{}_{}_{}'.format(args.dataset, args.opt_alg, args.lossfunction), "{}.csv".format(str(t))))
+    result_file = os.path.join(os.path.join(current_folder, 'result', 'result_direct_{}_{}_{}'.format(args.dataset, args.opt_alg, args.lossfunction), "{}.csv".format(str(t))))
     if not os.path.exists(os.path.dirname(result_file)):
         os.makedirs(os.path.dirname(result_file))
     pd.DataFrame(acc).to_csv(result_file, header=["epoch", "training_acc", "training_loss", "L2"], index=False)

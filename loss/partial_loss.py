@@ -3,6 +3,7 @@ import torch.nn.functional
 import torch.nn.functional as F
 from torch import Tensor
 from typing import Optional
+from torch.nn.functional import nll_loss, kl_div
 class MaskedCrossEntropyLoss(nn.CrossEntropyLoss):
     r"""
     Examples::
@@ -28,7 +29,7 @@ class MaskedCrossEntropyLoss(nn.CrossEntropyLoss):
                  reduce=None, reduction: str = 'mean', label_smoothing: float = 0.0, alpha: float = 0.0,
                  device=None, num_class: int = 10) -> None:
         super().__init__(weight, size_average, ignore_index, reduce, reduction)
-        P0 = (1 - alpha) /num_class
+        P0 = alpha /num_class
         self.expectation = torch.tensor(2 * P0)
         self.zero = torch.tensor(0.0)
         if device:
@@ -44,9 +45,8 @@ class MaskedCrossEntropyLoss(nn.CrossEntropyLoss):
         else:
             target_digit = target
 
-        target_mask_0 = torch.logical_and(target_digit < 0.5, input.le(self.expectation))
-        # get maximum of input with 0 target
-        input_new = torch.where(torch.logical_not(target_mask_0), input, self.zero)
+        target_mask_0 = torch.logical_not(torch.logical_and(target_digit < 0.5, input.le(self.expectation)))
+        input_new = torch.where(target_mask_0, input, self.expectation)
         return super().forward(input_new, target)
 
 
@@ -78,7 +78,7 @@ class AdaptiveMaskedCrossEntropyLoss(nn.CrossEntropyLoss):
                  reduce=None, reduction: str = 'mean', label_smoothing: float = 0.0, alpha: float = 0.0, device=None,
                  num_class: int = 10) -> None:
         super().__init__(weight, size_average, ignore_index, reduce, reduction)
-        P0 = (1 - alpha) / num_class
+        P0 = alpha / num_class
         self.expectation = torch.tensor(P0 * 2)
         self.zero = torch.tensor(0.0)
         if device:

@@ -8,8 +8,8 @@ from torchvision.transforms import ToTensor
 from torch.utils.tensorboard import SummaryWriter
 import math
 import matplotlib.pyplot as plt
-from opt.partial_opt import MyAdam
-from opt.partial_loss import MaskedCrossEntropyLoss
+from loss.partial_opt import MyAdam
+from loss.partial_loss import MaskedCrossEntropyLoss
 class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
