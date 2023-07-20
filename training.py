@@ -24,11 +24,11 @@ model_names = sorted(name for name in models.__dict__
                      if name.islower() and not name.startswith("__")
                      and callable(models.__dict__[name]))
 parser = argparse.ArgumentParser(description='Train Model')
-parser.add_argument('--epoch', '-e', dest='epoch', default=40, help='epoch')
+parser.add_argument('--epoch', '-e', dest='epoch', default=100, help='epoch')
 parser.add_argument('--dataset', '-d', dest='dataset', default="CIFAR10", help='dataset', required=False)
 parser.add_argument('--opt_alg', '-a', dest='opt_alg', default="SGD", help='opt_alg', required=False)
 parser.add_argument('--lossfunction', '-l', dest='lossfunction', default="MASKEDLABEL", help='lossfunction', required=False)
-parser.add_argument('--smoothing', '-s', dest='smoothing', default=0, help='label smoothing')
+parser.add_argument('--lr', '-lr', dest='lr', type=float, default=1e-4, help='learning rate')
 
 
 args = parser.parse_args()
@@ -222,6 +222,8 @@ if args.lossfunction == "LWSCE":
     criterion = MaskedCrossEntropyLoss(alpha=0.2, num_class=dataclasses_num, device=device)
 elif args.lossfunction == 'CROSSENTROPY':
     criterion = nn.CrossEntropyLoss()
+elif args.lossfunction == 'LABELSMOOTHING':
+    criterion = nn.CrossEntropyLoss(label_smoothing=0.2)
 elif args.lossfunction == "ALWSCE":
     criterion = AdaptiveMaskedCrossEntropyLoss(alpha=0.2, num_class=dataclasses_num, device=device)
 else:
@@ -239,16 +241,16 @@ else:
 
 def defineopt(model):
     if args.opt_alg == 'SGD':
-        optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.5, weight_decay=0.2)
+        optimizer = optim.SGD(model.parameters(), lr=args.lr, momentum=0.5, weight_decay=0.2)
     elif args.opt_alg == "ADAM":
-        optimizer = optim.Adam(model.parameters(), lr=1e-5)
+        optimizer = optim.Adam(model.parameters(), lr=args.lr)
     # elif args.opt_alg == "RADAM":
     #     optimizer = optim.(net.parameters(), lr=1e-4)
     elif args.opt_alg == "RMSprop":
-        optimizer = optim.RMSprop(model.parameters(), lr=1e-4)
+        optimizer = optim.RMSprop(model.parameters(), lr=args.lr)
     elif args.opt_alg == "LWADAM":
         from opt.customeropt import LWADAM
-        optimizer = LWADAM(model.parameters(), lr=1e-4)
+        optimizer = LWADAM(model.parameters(), lr=args.lr)
     else:
         raise Exception("Not accept optimizer of {}".args.opt_alg)
     return optimizer

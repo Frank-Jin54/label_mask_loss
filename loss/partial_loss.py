@@ -46,7 +46,7 @@ class MaskedCrossEntropyLoss(nn.CrossEntropyLoss):
             target_digit = target
 
         target_mask_0 = torch.logical_not(torch.logical_and(target_digit < 0.5, input.le(self.expectation)))
-        input_new = torch.where(target_mask_0, input, self.expectation)
+        input_new = torch.where(target_mask_0, input, self.zero)
         return super().forward(input_new, target)
 
 
