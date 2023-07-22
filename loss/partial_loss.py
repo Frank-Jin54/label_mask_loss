@@ -28,8 +28,8 @@ class MaskedCrossEntropyLoss(nn.CrossEntropyLoss):
     def __init__(self, weight: Optional[Tensor] = None, size_average=None, ignore_index: int = -100,
                  reduce=None, reduction: str = 'mean', label_smoothing: float = 0.0, alpha: float = 0.0,
                  device=None, num_class: int = 10) -> None:
-        super().__init__(weight, size_average, ignore_index, reduce, reduction)
-        P0 = alpha /num_class
+        super().__init__(weight, size_average, ignore_index, reduce, reduction, label_smoothing=label_smoothing)
+        P0 = alpha/num_class
         self.expectation = torch.tensor(2 * P0)
         self.zero = torch.tensor(0.0)
         if device:
