@@ -241,11 +241,9 @@ else:
 
 def defineopt(model):
     if args.opt_alg == 'SGD':
-        optimizer = optim.SGD(model.parameters(), lr=args.lr, momentum=0.5, weight_decay=0.2)
+        optimizer = optim.SGD(model.parameters(), lr=args.lr)
     elif args.opt_alg == "ADAM":
         optimizer = optim.Adam(model.parameters(), lr=args.lr)
-    # elif args.opt_alg == "RADAM":
-    #     optimizer = optim.(net.parameters(), lr=1e-4)
     elif args.opt_alg == "RMSprop":
         optimizer = optim.RMSprop(model.parameters(), lr=args.lr)
     elif args.opt_alg == "LWADAM":

@@ -6,8 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="52cdb521-4820-4797-aca6-52563e9986a4" name="Changes" comment="refactor codes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReadMe.md" beforeDir="false" afterPath="$PROJECT_DIR$/ReadMe.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loss/partial_loss.py" beforeDir="false" afterPath="$PROJECT_DIR$/loss/partial_loss.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/1.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/2.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/3.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/3.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/4.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/4.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/5.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/5.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/6.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/6.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/7.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/7.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/8.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/8.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/9.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/9.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/training.py" beforeDir="false" afterPath="$PROJECT_DIR$/training.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +53,7 @@
       <recent name="$PROJECT_DIR$/data/imagenet" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.CIFA100_ADAM_CROSSENTROPY">
+  <component name="RunManager" selected="Python.CIFA100_SGD_CROSSENTROPY">
     <configuration name="CIFA100_ADAM_CROSSENTROPY" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -105,6 +113,138 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
       <option name="PARAMETERS" value="--dataset CIFAR100 --opt_alg ADAM --lossfunction LWSCE --lr 0.5e-4" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="CIFA100_RMSprop_CROSSENTROPY" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="labelsmooth" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset CIFAR100 --opt_alg RMSprop --lossfunction CROSSENTROPY --lr 0.5e-4" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="CIFA100_RMSprop_LABELSMOOTHING" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="labelsmooth" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset CIFAR100 --opt_alg RMSprop --lossfunction LABELSMOOTHING --lr 0.5e-4" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="CIFA100_RMSprop_LWACE" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="labelsmooth" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset CIFAR100 --opt_alg RMSprop --lossfunction LWSCE --lr 0.5e-4" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="CIFA100_SGD_CROSSENTROPY" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="labelsmooth" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset CIFAR100 --opt_alg SGD --lossfunction CROSSENTROPY --lr 0.01" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="CIFA100_SGD_LABELSMOOTHING" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="labelsmooth" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset CIFAR100 --opt_alg SGD --lossfunction LABELSMOOTHING --lr 5e-5" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="CIFA100_SGD_LWACE" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="labelsmooth" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset CIFAR100 --opt_alg SGD --lossfunction LWSCE --lr 0.1e-5" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -983,6 +1123,12 @@
       <item itemvalue="Python.CIFA100_ADAM_CROSSENTROPY" />
       <item itemvalue="Python.CIFA100_ADAM_LABELSMOOTHING" />
       <item itemvalue="Python.CIFA100_ADAM_LWACE" />
+      <item itemvalue="Python.CIFA100_RMSprop_LWACE" />
+      <item itemvalue="Python.CIFA100_RMSprop_CROSSENTROPY" />
+      <item itemvalue="Python.CIFA100_RMSprop_LABELSMOOTHING" />
+      <item itemvalue="Python.CIFA100_SGD_LWACE" />
+      <item itemvalue="Python.CIFA100_SGD_CROSSENTROPY" />
+      <item itemvalue="Python.CIFA100_SGD_LABELSMOOTHING" />
       <item itemvalue="Python.EMNIST_ADAM_CROSSENTROPY" />
       <item itemvalue="Python.EMNIST_ADAM_LWSCE" />
       <item itemvalue="Python.EMNIST_ADAM_ALWSCE" />
@@ -1104,11 +1250,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/training.py</url>
-          <line>38</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/training.py</url>
           <line>99</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
@@ -1121,11 +1262,6 @@
           <url>file://$PROJECT_DIR$/model_define/hugging_face_vit.py</url>
           <line>11</line>
           <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/training.py</url>
-          <line>278</line>
-          <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/model_define/defined_model.py</url>
@@ -1141,11 +1277,6 @@
           <url>file://$USER_HOME$/anaconda3/envs/torch2/lib/python3.7/site-packages/torch/nn/functional.py</url>
           <line>2407</line>
           <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/training.py</url>
-          <line>30</line>
-          <option name="timeStamp" value="57" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
