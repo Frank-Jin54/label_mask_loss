@@ -338,7 +338,10 @@ def define_opt(model):
 
 optimizer = define_opt(model)
 # lambda_ = lambda epoch : (100 - epoch) / 100
-scheduler = ReduceLROnPlateau()
+
+def define_scheduler(optimizer):
+    return ReduceLROnPlateau(optimizer)
+scheduler = define_scheduler(optimizer)
 
 
 def count_parameters(model: nn.Module):
@@ -459,8 +462,8 @@ for _ in range(10):  # run multiple times
     for epoch in range(N_EPOCHS):
 
         train_loss = train(model, train_iter, optimizer, criterion, CLIP)
-        scheduler.step()
         valid_loss, acc = evaluate(model, valid_iter, criterion)
+        scheduler.step(metrics=acc)
 
         print(f'run time: {_} and epoch: {epoch}', f'Train Loss: {train_loss:.3f}', f' accuracy: {acc:.3f}')
         result.append([epoch, round(train_loss,3), round(acc, 3)])
@@ -476,7 +479,7 @@ for _ in range(10):  # run multiple times
     model = Seq2Seq(enc, dec, device).to(device)
     model.apply(init_weights)
     optimizer = define_opt(model)
-    scheduler = ReduceLROnPlateau()
+    scheduler = define_scheduler(optimizer)
 
 
     print(f'| Test Loss: {test_loss:.3f} | Test PPL: {math.exp(test_loss):7.3f} |')
