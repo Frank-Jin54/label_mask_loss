@@ -3,7 +3,7 @@ import torch
 import torchvision
 import torchvision.transforms as transforms
 # import matplotlib.pyplot as plt
-import numpy as np
+
 import torch.optim as optim
 import torch.nn as nn
 import torch.nn.functional as F
@@ -217,11 +217,13 @@ elif args.dataset == "QMNIST":
 
 else:
     raise Exception("Unable to support the data {}".format(args.dataset))
-
+torchvision.ops.focal_loss
 if args.lossfunction == "LWSCE":
     criterion = MaskedCrossEntropyLoss(alpha=0.2, num_class=dataclasses_num, device=device)
 elif args.lossfunction == 'CROSSENTROPY':
     criterion = nn.CrossEntropyLoss()
+elif args.lossfunction == "FOCAL":
+    criterion = torchvision.ops.focal_loss()
 elif args.lossfunction == 'LABELSMOOTHING':
     criterion = nn.CrossEntropyLoss(label_smoothing=0.2)
 elif args.lossfunction == "ALWSCE":

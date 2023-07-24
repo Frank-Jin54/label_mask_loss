@@ -453,6 +453,7 @@ best_valid_loss = float('inf')
 import os
 current_folder = os.path.dirname(os.path.abspath(__file__))
 import pandas as pd
+test_acc = []
 for _ in range(10):  # run multiple times
     file_path = os.path.join(current_folder, "result/{}_result/{}.csv".format(args.lf, _))
     if not os.path.exists(os.path.dirname(file_path)):
@@ -472,6 +473,7 @@ for _ in range(10):  # run multiple times
 
     test_loss, acc = evaluate(model, test_iter, criterion)
 
+    test_acc.append(acc)
     # redefine the model and optimizer
     del model
     del optimizer
@@ -484,3 +486,7 @@ for _ in range(10):  # run multiple times
 
     print(f'| Test Loss: {test_loss:.3f} | Test PPL: {math.exp(test_loss):7.3f} |')
     print(f'| Test acc: {acc:.3f}')
+
+# save test accuracy to the folder
+test_acc_file_path = os.path.join(current_folder, "result/{}_result/test_acc.csv".format(args.lf))
+pd.DataFrame(test_acc, columns=["accuracy"]).to_csv(test_acc_file_path)
