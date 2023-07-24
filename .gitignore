@@ -2,3 +2,4 @@ data/*
 model/*
 /test
 tmp/
+model_define/.data/*
