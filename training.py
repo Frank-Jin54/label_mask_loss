@@ -249,6 +249,12 @@ def defineopt(model):
     elif args.opt_alg == "LWADAM":
         from opt.customeropt import LWADAM
         optimizer = LWADAM(model.parameters(), lr=args.lr)
+    elif args.opt_alg == "RADAM":
+        optimizer = optim.RAdam(model.parameters(), lr=args.lr)
+    elif args.opt_alg == "ADADELTA":
+        optimizer = optim.Adadelta(model.parameters(), lr=args.lr)
+    elif args.opt_alg == "LWADAM":
+        optimizer = optim.AdamW(model.parameters(), lr=args.lr)
     else:
         raise Exception("Not accept optimizer of {}".args.opt_alg)
     return optimizer

@@ -9,7 +9,17 @@ from torchtext.data.utils import get_tokenizer
 from collections import Counter
 from torchtext.vocab.vocab import Vocab
 from torchtext.utils import download_from_url, extract_archive
+from loss.partial_loss import MaskedCrossEntropyLoss
 import io
+import argparse
+from torch.optim.lr_scheduler import StepLR, CosineAnnealingLR, LambdaLR, ReduceLROnPlateau
+
+torch.manual_seed(1000)
+torch.cuda.manual_seed(1000)
+parser = argparse.ArgumentParser(description='Train Model')
+parser.add_argument('--loss_function', '-lf', dest='lf', default="MASKEDLABEL", help='lossfunction', required=False)
+parser.add_argument('--lr', '-lr', dest='lr', type=float, default=1e-2, help='learning rate')
+args = parser.parse_args()
 
 url_base = 'https://raw.githubusercontent.com/multi30k/dataset/master/data/task1/raw/'
 train_urls = ('train.de.gz', 'train.en.gz')
@@ -135,8 +145,7 @@ class Encoder(nn.Module):
 
         self.dropout = nn.Dropout(dropout)
 
-    def forward(self,
-                src: Tensor) -> Tuple[Tensor]:
+    def forward(self, src: Tensor) -> Tuple[Tensor]:
 
         embedded = self.dropout(self.embedding(src))
 
@@ -174,7 +183,7 @@ class Attention(nn.Module):
         energy = torch.tanh(self.attn(torch.cat((
             repeated_decoder_hidden,
             encoder_outputs),
-            dim = 2)))
+            dim=2)))
 
         attention = torch.sum(energy, dim=2)
 
@@ -324,8 +333,12 @@ def init_weights(m: nn.Module):
 
 
 model.apply(init_weights)
+def define_opt(model):
+    return optim.Adam(model.parameters(), lr=args.lr)
 
-optimizer = optim.Adam(model.parameters())
+optimizer = define_opt(model)
+# lambda_ = lambda epoch : (100 - epoch) / 100
+scheduler = ReduceLROnPlateau()
 
 
 def count_parameters(model: nn.Module):
@@ -341,7 +354,14 @@ define loss function
 # PAD_IDX = en_vocab.stoi['<pad>']
 PAD_IDX = en_vocab.vocab['<pad>']
 
-criterion = nn.CrossEntropyLoss(ignore_index=PAD_IDX)
+if args.lf == "CROSSENTROPY":
+    criterion = nn.CrossEntropyLoss(ignore_index=PAD_IDX)
+elif args.lf == 'LABELSMOOTHING':
+    criterion = nn.CrossEntropyLoss(ignore_index=PAD_IDX, label_smoothing=0.2)
+elif args.lf == "LWSCE":
+    criterion = MaskedCrossEntropyLoss(ignore_index=PAD_IDX, alpha=0.2, num_class=OUTPUT_DIM, input_type="log", device=device)
+else:
+    raise Exception("Unsupport loss function of {}".format(args.lf))
 
 
 """
@@ -423,23 +443,41 @@ def epoch_time(start_time: int,
     return elapsed_mins, elapsed_secs
 
 
-N_EPOCHS = 10
+N_EPOCHS = 100
 CLIP = 1
 
 best_valid_loss = float('inf')
+import os
+current_folder = os.path.dirname(os.path.abspath(__file__))
+import pandas as pd
+for _ in range(10):  # run multiple times
+    file_path = os.path.join(current_folder, "result/{}_result/{}.csv".format(args.lf, _))
+    if not os.path.exists(os.path.dirname(file_path)):
+        os.makedirs(os.path.dirname(file_path))
 
-for epoch in range(N_EPOCHS):
+    result = []
+    for epoch in range(N_EPOCHS):
 
-    start_time = time.time()
+        train_loss = train(model, train_iter, optimizer, criterion, CLIP)
+        scheduler.step()
+        valid_loss, acc = evaluate(model, valid_iter, criterion)
 
-    train_loss = train(model, train_iter, optimizer, criterion, CLIP)
-    valid_loss, acc = evaluate(model, valid_iter, criterion)
+        print(f'run time: {_} and epoch: {epoch}', f'Train Loss: {train_loss:.3f}', f' accuracy: {acc:.3f}')
+        result.append([epoch, round(train_loss,3), round(acc, 3)])
 
-    print(f'\tTrain Loss: {train_loss:.3f} | Train PPL: {math.exp(train_loss):7.3f}')
-    print(f'\t Val. Loss: {valid_loss:.3f} |  Val. PPL: {math.exp(valid_loss):7.3f}')
-    print(f'\t accuracy: {acc:.3f}')
+    pd.DataFrame(result, columns=["epoch", "train_loss", "accuracy"]).to_csv(file_path)
 
-test_loss, acc = evaluate(model, test_iter, criterion)
+    test_loss, acc = evaluate(model, test_iter, criterion)
 
-print(f'| Test Loss: {test_loss:.3f} | Test PPL: {math.exp(test_loss):7.3f} |')
-print(f'| Test acc: {acc:.3f}')
+    # redefine the model and optimizer
+    del model
+    del optimizer
+    del scheduler
+    model = Seq2Seq(enc, dec, device).to(device)
+    model.apply(init_weights)
+    optimizer = define_opt(model)
+    scheduler = ReduceLROnPlateau()
+
+
+    print(f'| Test Loss: {test_loss:.3f} | Test PPL: {math.exp(test_loss):7.3f} |')
+    print(f'| Test acc: {acc:.3f}')
