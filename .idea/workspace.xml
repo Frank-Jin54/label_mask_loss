@@ -4,18 +4,57 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52cdb521-4820-4797-aca6-52563e9986a4" name="Changes" comment="refactor codes">
+    <list default="true" id="52cdb521-4820-4797-aca6-52563e9986a4" name="Changes" comment="add data ignore file">
+      <change afterPath="$PROJECT_DIR$/.data/test_2016_flickr.de" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.data/test_2016_flickr.de.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.data/test_2016_flickr.en" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.data/test_2016_flickr.en.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.data/train.de" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.data/train.de.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.data/train.en" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.data/train.en.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.data/val.de" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.data/val.de.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.data/val.en" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.data/val.en.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/llama2/model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model_define/.data/test_2016_flickr.de" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model_define/.data/test_2016_flickr.de.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model_define/.data/test_2016_flickr.en" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model_define/.data/test_2016_flickr.en.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model_define/.data/train.de" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model_define/.data/train.de.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model_define/.data/train.en" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model_define/.data/train.en.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model_define/.data/val.de" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model_define/.data/val.de.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model_define/.data/val.en" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model_define/.data/val.en.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/0.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/2.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/3.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/3.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/4.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/4.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/5.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/5.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/6.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/6.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/7.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/7.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/8.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/8.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/9.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR100_RMSprop_LWSCE/9.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cv/load_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/cv/load_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cv/training.py" beforeDir="false" afterPath="$PROJECT_DIR$/cv/training.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_define/defined_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_define/defined_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR100_ADAM_CROSSENTROPY/0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR100_ADAM_CROSSENTROPY/0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/1.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/2.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/3.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/3.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/4.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/4.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/5.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/5.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/6.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/6.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/7.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/7.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/8.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/8.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/9.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/9.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/1.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/2.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/3.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/3.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/4.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/4.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/5.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/5.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/6.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/6.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/7.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/7.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/8.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/8.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/9.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/9.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/training.py" beforeDir="false" afterPath="$PROJECT_DIR$/training.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,10 +89,15 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/nlp" />
+      <recent name="$PROJECT_DIR$/cv" />
       <recent name="$PROJECT_DIR$/data/imagenet" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dataset" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.CIFA100_SGD_CROSSENTROPY">
+  <component name="RunManager" selected="Python.IMAGENET_ADAM_LWSCE">
     <configuration name="CIFA100_ADAM_CROSSENTROPY" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -69,6 +113,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
       <option name="PARAMETERS" value="--dataset CIFAR100 --opt_alg ADAM --lossfunction CROSSENTROPY --lr 0.5e-4" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="CIFA100_ADAM_FOCAL" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="labelsmooth" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset CIFAR100 --opt_alg ADAM --lossfunction FOCAL --lr 0.5e-4" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -252,28 +318,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="CIFA10_ADAM_ALWSCE" type="PythonConfigurationType" factoryName="Python">
-      <module name="label_mask_loss" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="labelsmooth" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
-      <option name="PARAMETERS" value="--dataset CIFAR10 --opt_alg ADAM --lossfunction ALWSCE" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="CIFA10_ADAM_CROSSENTROPY" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -311,6 +355,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
       <option name="PARAMETERS" value="--dataset CIFAR10 --opt_alg ADAM --lossfunction LABELSMOOTHING --lr 1e-4" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="CIFA10_ADAM_LABELSMOOTHING" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="labelsmooth" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset CIFAR10 --opt_alg ADAM --lossfunction LABELSMOOTHING" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -788,13 +854,57 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="torch2" />
+      <option name="SDK_NAME" value="labelsmooth" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
-      <option name="PARAMETERS" value="--dataset IMAGENET --opt_alg RMSprop --lossfunction CROSSENTROPY" />
+      <option name="PARAMETERS" value="--dataset IMAGENET --opt_alg ADAM --lossfunction CROSSENTROPY" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="IMAGENET_ADAM_LABELSMOOTHING" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="labelsmooth" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset IMAGENET --opt_alg ADAM --lossfunction LABELSMOOTHING" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="IMAGENET_ADAM_LWSCE" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="labelsmooth" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset IMAGENET --opt_alg ADAM --lossfunction LWSCE" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -1109,58 +1219,152 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="load_dataset" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data/imagenet" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dataset/load_dataset.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="transformer_translation_crossentropy" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/model_define" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/model_define/transformer_translation.py" />
+      <option name="PARAMETERS" value="--loss_function CROSSENTROPY --lr 0.01" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="transformer_translation_labelsmoothing" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="labelsmooth" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/model_define/transformer_translation.py" />
+      <option name="PARAMETERS" value="--loss_function LABELSMOOTHING --lr 0.01" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="transformer_translation_lwsce" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="labelsmooth" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/model_define/transformer_translation.py" />
+      <option name="PARAMETERS" value="--loss_function LWSCE --lr 0.01" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Python.imagenet" />
-      <item itemvalue="Python.CIFA10_ADAM_ALWSCE" />
+      <item itemvalue="Python.CIFA100_ADAM_CROSSENTROPY" />
+      <item itemvalue="Python.CIFA100_ADAM_FOCAL" />
+      <item itemvalue="Python.CIFA100_ADAM_LABELSMOOTHING" />
+      <item itemvalue="Python.CIFA100_ADAM_LWACE" />
+      <item itemvalue="Python.CIFA100_RMSprop_CROSSENTROPY" />
+      <item itemvalue="Python.CIFA100_RMSprop_LABELSMOOTHING" />
+      <item itemvalue="Python.CIFA100_RMSprop_LWACE" />
+      <item itemvalue="Python.CIFA100_SGD_CROSSENTROPY" />
+      <item itemvalue="Python.CIFA100_SGD_LABELSMOOTHING" />
+      <item itemvalue="Python.CIFA100_SGD_LWACE" />
       <item itemvalue="Python.CIFA10_ADAM_CROSSENTROPY" />
       <item itemvalue="Python.CIFA10_ADAM_LABELSMOOTHING" />
       <item itemvalue="Python.CIFA10_ADAM_LWSCE" />
-      <item itemvalue="Python.CIFA10_SELF_DIRECT" />
-      <item itemvalue="Python.CIFA10_SELF_DIRECT_CROSSENTROPY" />
       <item itemvalue="Python.CIFA10_RMSprop_ALWSCE" />
       <item itemvalue="Python.CIFA10_RMSprop_CROSSENTROPY" />
       <item itemvalue="Python.CIFA10_RMSprop_LWSCE" />
-      <item itemvalue="Python.CIFA100_ADAM_CROSSENTROPY" />
-      <item itemvalue="Python.CIFA100_ADAM_LABELSMOOTHING" />
-      <item itemvalue="Python.CIFA100_ADAM_LWACE" />
-      <item itemvalue="Python.CIFA100_RMSprop_LWACE" />
-      <item itemvalue="Python.CIFA100_RMSprop_CROSSENTROPY" />
-      <item itemvalue="Python.CIFA100_RMSprop_LABELSMOOTHING" />
-      <item itemvalue="Python.CIFA100_SGD_LWACE" />
-      <item itemvalue="Python.CIFA100_SGD_CROSSENTROPY" />
-      <item itemvalue="Python.CIFA100_SGD_LABELSMOOTHING" />
+      <item itemvalue="Python.CIFA10_SELF_DIRECT" />
+      <item itemvalue="Python.CIFA10_SELF_DIRECT_CROSSENTROPY" />
+      <item itemvalue="Python.Caltech101_RMSprop_CROSSENTROPY" />
+      <item itemvalue="Python.Caltech101_RMSprop_LWSCE" />
+      <item itemvalue="Python.EMNIST_ADAM_ALWSCE" />
       <item itemvalue="Python.EMNIST_ADAM_CROSSENTROPY" />
       <item itemvalue="Python.EMNIST_ADAM_LWSCE" />
-      <item itemvalue="Python.EMNIST_ADAM_ALWSCE" />
+      <item itemvalue="Python.EMNIST_RMSprop_ALWSCE" />
       <item itemvalue="Python.EMNIST_RMSprop_CROSSENTROPY" />
       <item itemvalue="Python.EMNIST_RMSprop_LWSCE" />
-      <item itemvalue="Python.EMNIST_RMSprop_ALWSCE" />
-      <item itemvalue="Python.IMAGENET_ADAM_CROSSENTROPY" />
-      <item itemvalue="Python.KMNIST_ADAM_CROSSENTROPY" />
-      <item itemvalue="Python.KMNIST_ADAM_LWSCE" />
-      <item itemvalue="Python.KMNIST_ADAM_ALWSCE" />
-      <item itemvalue="Python.KMNIST_RMSprop_CROSSENTROPY" />
-      <item itemvalue="Python.KMNIST_RMSprop_LWSCE" />
-      <item itemvalue="Python.KMNIST_RMSprop_ALWSCE" />
       <item itemvalue="Python.FASHIONMNIST_ADAM_ALWSCE" />
       <item itemvalue="Python.FASHIONMNIST_ADAM_CROSSENTROPY" />
-      <item itemvalue="Python.FASHIONMNIST_DIRECT_NORM" />
       <item itemvalue="Python.FASHIONMNIST_ADAM_LWSCE" />
+      <item itemvalue="Python.FASHIONMNIST_DIRECT_NORM" />
       <item itemvalue="Python.FASHIONMNIST_RMSprop_ALWSCE" />
       <item itemvalue="Python.FASHIONMNIST_RMSprop_CROSSENTROPY" />
       <item itemvalue="Python.FASHIONMNIST_RMSprop_LWSCE" />
+      <item itemvalue="Python.IMAGENET_ADAM_CROSSENTROPY" />
+      <item itemvalue="Python.IMAGENET_ADAM_LABELSMOOTHING" />
+      <item itemvalue="Python.IMAGENET_ADAM_LWSCE" />
+      <item itemvalue="Python.KMNIST_ADAM_ALWSCE" />
+      <item itemvalue="Python.KMNIST_ADAM_CROSSENTROPY" />
+      <item itemvalue="Python.KMNIST_ADAM_LWSCE" />
+      <item itemvalue="Python.KMNIST_RMSprop_ALWSCE" />
+      <item itemvalue="Python.KMNIST_RMSprop_CROSSENTROPY" />
+      <item itemvalue="Python.KMNIST_RMSprop_LWSCE" />
+      <item itemvalue="Python.QMINIST_ADAM_ALWSCE" />
       <item itemvalue="Python.QMINIST_ADAM_CROSSENTROPY" />
       <item itemvalue="Python.QMINIST_ADAM_LWSCE" />
-      <item itemvalue="Python.QMINIST_ADAM_ALWSCE" />
+      <item itemvalue="Python.QMINIST_RMSprop_ALWSCE" />
       <item itemvalue="Python.QMINIST_RMSprop_CROSSENTROPY" />
       <item itemvalue="Python.QMINIST_RMSprop_LWSCE" />
-      <item itemvalue="Python.QMINIST_RMSprop_ALWSCE" />
-      <item itemvalue="Python.Caltech101_RMSprop_LWSCE" />
-      <item itemvalue="Python.Caltech101_RMSprop_CROSSENTROPY" />
+      <item itemvalue="Python.imagenet" />
+      <item itemvalue="Python.transformer_translation_labelsmoothing" />
+      <item itemvalue="Python.transformer_translation_lwsce" />
       <item itemvalue="Python.LLM_train" />
+      <item itemvalue="Python.load_dataset" />
+      <item itemvalue="Python.transformer_translation_crossentropy" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.load_dataset" />
+        <item itemvalue="Python.transformer_translation_crossentropy" />
         <item itemvalue="Python.LLM_train" />
       </list>
     </recent_temporary>
@@ -1230,15 +1434,49 @@
       <option name="project" value="LOCAL" />
       <updated>1688343758925</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add requirements">
+      <option name="closed" value="true" />
+      <created>1690041209572</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1690041209572</updated>
+    </task>
+    <task id="LOCAL-00009" summary="refactor codes">
+      <option name="closed" value="true" />
+      <created>1690160607521</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1690160607521</updated>
+    </task>
+    <task id="LOCAL-00010" summary="add data ignore file">
+      <option name="closed" value="true" />
+      <created>1690224740918</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1690224740919</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add data ignore file">
+      <option name="closed" value="true" />
+      <created>1690224850685</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1690224850685</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update files" />
     <MESSAGE value="update file" />
     <MESSAGE value="rename transformer model" />
+    <MESSAGE value="add requirements" />
     <MESSAGE value="refactor codes" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor codes" />
+    <MESSAGE value="add data ignore file" />
+    <option name="LAST_COMMIT_MESSAGE" value="add data ignore file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1247,11 +1485,6 @@
           <url>file://$PROJECT_DIR$/opt/test.py</url>
           <line>67</line>
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/training.py</url>
-          <line>99</line>
-          <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/model_define/hugging_face_vit.py</url>
@@ -1265,7 +1498,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/model_define/defined_model.py</url>
-          <line>180</line>
+          <line>226</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1277,6 +1510,36 @@
           <url>file://$USER_HOME$/anaconda3/envs/torch2/lib/python3.7/site-packages/torch/nn/functional.py</url>
           <line>2407</line>
           <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/anaconda3/envs/labelsmooth/lib/python3.10/site-packages/torchvision/ops/focal_loss.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/training.py</url>
+          <line>318</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/loss/partial_loss.py</url>
+          <line>49</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/model_define/defined_model.py</url>
+          <line>529</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/training.py</url>
+          <line>105</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/model_define/defined_model.py</url>
+          <line>78</line>
+          <option name="timeStamp" value="75" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

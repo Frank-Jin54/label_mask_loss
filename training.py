@@ -3,13 +3,17 @@ import torch
 import torchvision
 import torchvision.transforms as transforms
 # import matplotlib.pyplot as plt
-
+from torch.utils.data import random_split
 import torch.optim as optim
 import torch.nn as nn
 import torch.nn.functional as F
 from loss.partial_loss import MaskedCrossEntropyLoss, AdaptiveMaskedCrossEntropyLoss
-from model_define.defined_model import KMNISTNet, CIFARNet
-# from model_define.hugging_face_vit import ViTForImageClassification
+from model_define.defined_model import KMNISTNet, CIFARNet, CIFARNet_Infer, IMAGENET
+# from cv.define_model import ViTForImageClassification
+from transformers import ViTForImageClassification, ViTConfig
+from torchvision.ops.focal_loss import sigmoid_focal_loss
+from torch.optim.lr_scheduler import StepLR, CosineAnnealingLR, LambdaLR, ReduceLROnPlateau
+from model_define.hugging_face_vit import ViTForImageClassification
 import torchvision.models as models
 import os
 import pandas as pd
@@ -51,7 +55,14 @@ batch_size = 128
 
 current_folder = os.path.dirname(os.path.abspath(__file__))
 data_path = os.path.join(current_folder, 'data')
+
+def reinitialization_model(model):
+    for layer in model.children():
+        if hasattr(layer, 'reset_parameters'):
+            layer.reset_parameters()
+
 if args.dataset == "CIFAR10":
+
     transform = transforms.Compose(
         [transforms.ToTensor(),
          transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
@@ -74,9 +85,7 @@ if args.dataset == "CIFAR10":
 
 
 elif args.dataset == "CIFAR100":
-    transform = transforms.Compose(
-        [transforms.ToTensor(),
-         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
+    transform = transforms.Compose([transforms.ToTensor()])
 
     trainset = torchvision.datasets.CIFAR100(root=data_path, train=True,
                                             download=True, transform=transform)
@@ -91,19 +100,19 @@ elif args.dataset == "CIFAR100":
     image_size = trainset.data.shape[1]
     dataclasses_num = len(trainset.classes)
 
+    # net = CIFARNet(num_class=dataclasses_num, num_channel=num_channel)
     net = CIFARNet(num_class=dataclasses_num, num_channel=num_channel)
     # net = ViTForImageClassification(num_labels=dataclasses_num)
     net = net.to(device)
 
 elif args.dataset == 'IMAGENET':
-
-    trainset = torchvision.datasets.ImageNet(root=data_path, split="train")
-    trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size,
-                                              shuffle=True, num_workers=0)
-
-    testset = torchvision.datasets.EMNIST(root=data_path, split="mnist")
-    testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size,
-                                             shuffle=False, num_workers=0)
+    from cv.load_data import load_imagenet_dataset
+    trainloader, testloader, dataclasses_num = load_imagenet_dataset()
+    # config = ViTConfig(image_size=64, num_labels=dataclasses_num)
+    # net = ViTForImageClassification(config=config)
+    net = IMAGENET(num_class=dataclasses_num, num_channel=3)
+    reinitialization_model(net)
+    net = net.to(device)
 
 elif args.dataset == "EMNIST":
     transform = transforms.Compose(
@@ -172,6 +181,7 @@ elif args.dataset == "MNIST":
     net = KMNISTNet(num_class=dataclasses_num, num_channel=num_channel)
     net = net.to(device)
 
+
 elif args.dataset == "KMNIST":
     transform = transforms.Compose(
         [transforms.ToTensor(), torchvision.transforms.Normalize(
@@ -217,13 +227,11 @@ elif args.dataset == "QMNIST":
 
 else:
     raise Exception("Unable to support the data {}".format(args.dataset))
-torchvision.ops.focal_loss
+
 if args.lossfunction == "LWSCE":
     criterion = MaskedCrossEntropyLoss(alpha=0.2, num_class=dataclasses_num, device=device)
 elif args.lossfunction == 'CROSSENTROPY':
     criterion = nn.CrossEntropyLoss()
-elif args.lossfunction == "FOCAL":
-    criterion = torchvision.ops.focal_loss()
 elif args.lossfunction == 'LABELSMOOTHING':
     criterion = nn.CrossEntropyLoss(label_smoothing=0.2)
 elif args.lossfunction == "ALWSCE":
@@ -261,6 +269,9 @@ def defineopt(model):
         raise Exception("Not accept optimizer of {}".args.opt_alg)
     return optimizer
 optimizer = defineopt(net)
+def define_scheduler(optimizer):
+    return ReduceLROnPlateau(optimizer)
+scheduler = define_scheduler(optimizer)
 ########################################################################
 def run_test(model_path):
     correct = 0
@@ -271,10 +282,16 @@ def run_test(model_path):
         for data in testloader:
             images, labels = data
             # calculate outputs by running images through the network
-            images = images.to(device)
+            if "IMAGENET" in args.dataset:
+                images = data["image"].to(device)
+                labels = data["label"].to(device)
+            else:
+                images = images.to(device)
+                labels = labels.to(device)
+
             outputs = net(images)
             # the class with the highest energy is what we choose as prediction
-            _, predicted = torch.max(outputs.data, 1)
+            predicted = torch.argmax(outputs.data, 1)
             total += labels.size(0)
             labels = labels.to(device)
             correct += (predicted == labels).sum().item()
@@ -290,25 +307,30 @@ def L2_reg(parameters):
 def save_model(net, model_path):
     torch.save(net.state_dict(), model_path)
 
-def reinitialization_model(model):
-    for layer in model.children():
-        if hasattr(layer, 'reset_parameters'):
-            layer.reset_parameters()
+
 # 4. Train the network
 for t in range(10): # train model 10 times
     acc = []
-    for epoch in range(int(args.epoch)):  # loop over the dataset multiple times
+    for epoch in range(1,int(args.epoch)):  # loop over the dataset multiple times
         running_loss = 0.0
         for i, data in enumerate(trainloader, 0):
             # get the inputs; data is a list of [inputs, labels]
             inputs, labels = data
             # forward + backward + optimize
-            inputs = inputs.to(device)
-            labels = labels.to(device)
+            if "IMAGENET" in args.dataset:
+                inputs = data["image"].to(device)
+                labels = data["label"].to(device)
+            else:
+                inputs = inputs.to(device)
+                labels = labels.to(device)
             try:
                 outputs = net(inputs)
             except Exception as ex:
                 outputs = net(inputs)
+            if args.lossfunction == 'FOCAL':
+                class_num = inputs.size()[-1]
+                labels = torch.nn.functional.one_hot(labels, num_classes=class_num)
+
             loss = criterion(outputs, labels)
             loss.backward()
             optimizer.step()
@@ -320,12 +342,13 @@ for t in range(10): # train model 10 times
         model_path = os.path.join(current_folder, 'model', '{}_{}_{}_net.pth'.format(args.dataset, args.opt_alg, args.lossfunction))
         save_model(net, model_path)
         acc_epoch = run_test(model_path)
+        scheduler.step(metrics=acc_epoch)
         acc_epoch = round(acc_epoch, 2)
         L2 = L2_reg(net.parameters())
         acc.append([epoch, acc_epoch, round(running_loss, 2), L2])
         print("{} epoch acc is {}, L2 is {}".format(epoch, acc_epoch, L2))
     print('Finished Training')
-    result_file = os.path.join(os.path.join(current_folder, 'result', 'result_direct_{}_{}_{}'.format(args.dataset, args.opt_alg, args.lossfunction), "{}.csv".format(str(t))))
+    result_file = os.path.join(os.path.join(current_folder, 'result', 'result_final_{}_{}_{}'.format(args.dataset, args.opt_alg, args.lossfunction), "{}.csv".format(str(t))))
     if not os.path.exists(os.path.dirname(result_file)):
         os.makedirs(os.path.dirname(result_file))
     pd.DataFrame(acc).to_csv(result_file, header=["epoch", "training_acc", "training_loss", "L2"], index=False)
@@ -333,9 +356,18 @@ for t in range(10): # train model 10 times
     del optimizer
     if 'MNIST' in args.dataset:
         net = KMNISTNet(num_class=dataclasses_num, num_channel=num_channel)
+        reinitialization_model(net)
         net = net.to(device)
         optimizer = defineopt(net)
-    else:
+    elif "CIFAR" in args.dataset:
         net = CIFARNet(num_class=dataclasses_num, num_channel=num_channel)
+        reinitialization_model(net)
+        net = net.to(device)
+        optimizer = defineopt(net)
+    elif "IMAGENET" in args.dataset:
+        # config = ViTConfig(image_size=64, num_labels=dataclasses_num)
+        # net = ViTForImageClassification(config=config)
+        net = IMAGENET(num_class=dataclasses_num, num_channel=3)
+        reinitialization_model(net)
         net = net.to(device)
         optimizer = defineopt(net)

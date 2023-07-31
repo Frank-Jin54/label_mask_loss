@@ -38,29 +38,71 @@ class CIFARNet(nn.Module):
     def forward(self, x):
         return self.network(x)
 
-
-class KMNISTNet(nn.Module):
+class IMAGENET(nn.Module):
     def __init__(self, num_class, num_channel=3):
         super().__init__()
-        self.network = nn.Sequential(
-            nn.Conv2d(num_channel, 32, kernel_size=3, padding=3),  # 32 X 32 X 32
+        self.network1 = nn.Sequential(
+            nn.Conv2d(num_channel, 32, kernel_size=3, padding=1),  # 32 X 32 X 32
             nn.ReLU(),
             nn.Conv2d(32, 64, kernel_size=3, stride=1, padding=1),  # 64 X 32 X 32
             nn.ReLU(),
-            nn.MaxPool2d(2, 2),  # output: 64 X 16 X 16
+            nn.MaxPool2d(2, 2))  # output: 64 X 32 X 32
 
+        self.network2 = nn.Sequential(
             nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1),  # output: 128 X 16 X 16
             nn.ReLU(),
             nn.Conv2d(128, 128, kernel_size=3, stride=1, padding=1),  # output: 128 X 16 X 16
             nn.ReLU(),
-            nn.MaxPool2d(2, 2),  # output: 128 X 8 X 8
+            nn.MaxPool2d(2, 2))  # output: 128 X 8 X 8
 
+        self.network3 = nn.Sequential(
             nn.Conv2d(128, 256, kernel_size=3, stride=1, padding=1),  # output: 256 X 8 X 8
             nn.ReLU(),
             nn.Conv2d(256, 256, kernel_size=3, stride=1, padding=1),  # output: 256 X 8 X 8
             nn.ReLU(),
-            nn.MaxPool2d(2, 2),  # output: 256 X 4 X 4
+            nn.MaxPool2d(2, 2))  # output: 256 X 8 X 8
 
+        self.network4 = nn.Sequential(
+            nn.Flatten(),
+            nn.Linear(256 * 8 * 8, 1024),
+            nn.ReLU(),
+            nn.Linear(1024, 512),
+            nn.ReLU(),
+            nn.Linear(512, num_class),
+            nn.Softmax()
+        )
+
+    def forward(self, x):
+        output = self.network1(x)
+        output = self.network2(output)
+        output = self.network3(output)
+        output = self.network4(output)
+        return output
+class KMNISTNet(nn.Module):
+    def __init__(self, num_class, num_channel=3):
+        super().__init__()
+        self.network1 = nn.Sequential(
+            nn.Conv2d(num_channel, 32, kernel_size=3, padding=3),  # 32 X 32 X 32
+            nn.ReLU(),
+            nn.Conv2d(32, 64, kernel_size=3, stride=1, padding=1),  # 64 X 32 X 32
+            nn.ReLU(),
+            nn.MaxPool2d(2, 2))  # output: 64 X 16 X 16
+
+        self.network2 = nn.Sequential(
+            nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1),  # output: 128 X 16 X 16
+            nn.ReLU(),
+            nn.Conv2d(128, 128, kernel_size=3, stride=1, padding=1),  # output: 128 X 16 X 16
+            nn.ReLU(),
+            nn.MaxPool2d(2, 2))  # output: 128 X 8 X 8
+
+        self.network3 = nn.Sequential(
+            nn.Conv2d(128, 256, kernel_size=3, stride=1, padding=1),  # output: 256 X 8 X 8
+            nn.ReLU(),
+            nn.Conv2d(256, 256, kernel_size=3, stride=1, padding=1),  # output: 256 X 8 X 8
+            nn.ReLU(),
+            nn.MaxPool2d(2, 2))  # output: 256 X 4 X 4
+
+        self.network4 = nn.Sequential(
             nn.Flatten(),
             nn.Linear(256 * 4 * 4, 1024),
             nn.ReLU(),
@@ -71,7 +113,11 @@ class KMNISTNet(nn.Module):
         )
 
     def forward(self, x):
-        return self.network(x)
+        output = self.network1(x)
+        output = self.network2(output)
+        output = self.network3(output)
+        output = self.network4(output)
+        return output
 
 
 class CIFARNet_SelfDirect(nn.Module):
@@ -423,4 +469,82 @@ class CIFARNet_SelfDirect_Norm(nn.Module):
         output = self.norm3(output)
 
         output = self.network4(output)
+        return output
+
+
+class CIFARNet_Infer(nn.Module):
+    def __init__(self, num_class, num_channel=3, device="cpu"):
+        super().__init__()
+
+        self.network1 = nn.Sequential(
+            nn.Conv2d(num_channel, 32, kernel_size=3, padding=1),  # 32 X 32 X 32
+            nn.ReLU(),
+            nn.Conv2d(32, 64, kernel_size=3, stride=1, padding=1),  # 64 X 32 X 32
+            nn.ReLU(),
+            nn.MaxPool2d(2, 2))  # output: 64 X 32 X 32
+
+        self.norm1 = nn.BatchNorm2d(64)
+
+        self.network2 = nn.Sequential(
+            nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1),  # output: 128 X 16 X 16
+            nn.ReLU(),
+            nn.Conv2d(128, 128, kernel_size=3, stride=1, padding=1),  # output: 128 X 16 X 16
+            nn.ReLU(),
+            nn.MaxPool2d(2, 2))  # output: 128 X 8 X 8
+
+        self.norm2 = nn.BatchNorm2d(128)
+
+        self.network3 = nn.Sequential(
+            nn.Conv2d(128, 256, kernel_size=3, stride=1, padding=1),  # output: 256 X 8 X 8
+            nn.ReLU(),
+            nn.Conv2d(256, 256, kernel_size=3, stride=1, padding=1),  # output: 256 X 8 X 8
+            nn.ReLU(),
+            nn.MaxPool2d(2, 2))  # output: 256 X 4 X 4
+
+        self.norm3 = nn.BatchNorm2d(256)
+
+        # decoder
+        self.flatten = nn.Flatten()
+        self.attention_m1 = torch.randn((1024, 256 * 4 * 4)).to(device)
+
+        self.attention_m2 = torch.randn((512, 1024)).to(device)
+
+        self.attention_m3 = torch.randn((num_class, 512)).to(device)
+
+        self.sf = nn.Softmax()
+
+    def forward(self, x):
+        output = self.network1(x)
+        output = self.norm1(output)
+
+        output = self.network2(output)
+        output = self.norm2(output)
+
+        output = self.network3(output)
+        output = self.norm3(output)
+
+        output = self.flatten(output)
+
+        self.attention_m1_sf11 = torch.softmax(self.attention_m1, dim=1)
+        self.attention_m1_sf12 = torch.softmax(self.attention_m1, dim=0)
+        output11 = torch.matmul(output, torch.transpose(self.attention_m1_sf11, 0, 1))
+        output12 = torch.matmul(output, torch.transpose(self.attention_m1_sf12, 0, 1))
+        output = torch.mul(output11, output12)
+        output = torch.relu(output)
+
+        self.attention_m1_sf21 = torch.softmax(self.attention_m2, dim=1)
+        self.attention_m1_sf22 = torch.softmax(self.attention_m2, dim=0)
+        output21 = torch.matmul(output, torch.transpose(self.attention_m1_sf21, 0, 1))
+        output22 = torch.matmul(output, torch.transpose(self.attention_m1_sf22, 0, 1))
+        output = torch.mul(output21, output22)
+        output = torch.relu(output)
+
+        self.attention_m1_sf31 = torch.softmax(self.attention_m3, dim=1)
+        self.attention_m1_sf32 = torch.softmax(self.attention_m3, dim=0)
+        output31 = torch.matmul(output, torch.transpose(self.attention_m1_sf31, 0, 1))
+        output32 = torch.matmul(output, torch.transpose(self.attention_m1_sf32, 0, 1))
+        output = torch.mul(output31, output32)
+        output = torch.relu(output)
+
+        output = self.sf(output)
         return output
