@@ -64,7 +64,7 @@ class IMAGENET(nn.Module):
 
         self.network4 = nn.Sequential(
             nn.Flatten(),
-            nn.Linear(256 * 8 * 8, 1024),
+            nn.Linear(256 * 28 * 28, 1024),
             nn.ReLU(),
             nn.Linear(1024, 512),
             nn.ReLU(),

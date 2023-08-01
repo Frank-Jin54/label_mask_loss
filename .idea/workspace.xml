@@ -4,57 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52cdb521-4820-4797-aca6-52563e9986a4" name="Changes" comment="add data ignore file">
-      <change afterPath="$PROJECT_DIR$/.data/test_2016_flickr.de" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.data/test_2016_flickr.de.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.data/test_2016_flickr.en" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.data/test_2016_flickr.en.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.data/train.de" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.data/train.de.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.data/train.en" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.data/train.en.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.data/val.de" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.data/val.de.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.data/val.en" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.data/val.en.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/llama2/model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model_define/.data/test_2016_flickr.de" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model_define/.data/test_2016_flickr.de.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model_define/.data/test_2016_flickr.en" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model_define/.data/test_2016_flickr.en.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model_define/.data/train.de" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model_define/.data/train.de.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model_define/.data/train.en" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model_define/.data/train.en.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model_define/.data/val.de" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model_define/.data/val.de.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model_define/.data/val.en" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model_define/.data/val.en.gz" afterDir="false" />
+    <list default="true" id="52cdb521-4820-4797-aca6-52563e9986a4" name="Changes" comment="add result">
+      <change afterPath="$PROJECT_DIR$/video/define_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video/load_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video/training.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asr/define_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/asr/define_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cv/define_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/cv/define_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cv/load_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/cv/load_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cv/training.py" beforeDir="false" afterPath="$PROJECT_DIR$/cv/training.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loss/partial_loss.py" beforeDir="false" afterPath="$PROJECT_DIR$/loss/partial_loss.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model_define/defined_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_define/defined_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR100_ADAM_CROSSENTROPY/0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR100_ADAM_CROSSENTROPY/0.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/0.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/2.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/3.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/3.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/4.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/4.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/5.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/5.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/6.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/6.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/7.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/7.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/8.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/8.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/9.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_CROSSENTROPY/9.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/0.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/2.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/3.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/3.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/4.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/4.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/5.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/5.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/6.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/6.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/7.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/7.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/8.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/8.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/9.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/result_direct_CIFAR10_ADAM_LWSCE/9.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nlp/define_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/nlp/define_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/training.py" beforeDir="false" afterPath="$PROJECT_DIR$/training.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,13 +40,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/josh/paper/label_mask_loss/training.py&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/josh/paper/label_mask_loss/video",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/nlp" />
@@ -1065,6 +1025,50 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="POKEMON_ADAM_LABELSMOOTHING" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="labelsmooth" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset POKEMON --opt_alg ADAM --lossfunction LABELSMOOTHING" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="POKEMON_ADAM_LWSCE" type="PythonConfigurationType" factoryName="Python">
+      <module name="label_mask_loss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="labelsmooth" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training.py" />
+      <option name="PARAMETERS" value="--dataset POKEMON --opt_alg ADAM --lossfunction LWSCE" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="QMINIST_ADAM_ALWSCE" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -1342,6 +1346,8 @@
       <item itemvalue="Python.IMAGENET_ADAM_CROSSENTROPY" />
       <item itemvalue="Python.IMAGENET_ADAM_LABELSMOOTHING" />
       <item itemvalue="Python.IMAGENET_ADAM_LWSCE" />
+      <item itemvalue="Python.POKEMON_ADAM_LABELSMOOTHING" />
+      <item itemvalue="Python.POKEMON_ADAM_LWSCE" />
       <item itemvalue="Python.KMNIST_ADAM_ALWSCE" />
       <item itemvalue="Python.KMNIST_ADAM_CROSSENTROPY" />
       <item itemvalue="Python.KMNIST_ADAM_LWSCE" />
@@ -1466,7 +1472,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690224850685</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add result">
+      <option name="closed" value="true" />
+      <created>1690847558728</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1690847558728</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -1476,7 +1490,8 @@
     <MESSAGE value="add requirements" />
     <MESSAGE value="refactor codes" />
     <MESSAGE value="add data ignore file" />
-    <option name="LAST_COMMIT_MESSAGE" value="add data ignore file" />
+    <MESSAGE value="add result" />
+    <option name="LAST_COMMIT_MESSAGE" value="add result" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1517,29 +1532,34 @@
           <option name="timeStamp" value="66" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/training.py</url>
-          <line>318</line>
-          <option name="timeStamp" value="67" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/loss/partial_loss.py</url>
-          <line>49</line>
-          <option name="timeStamp" value="69" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/model_define/defined_model.py</url>
           <line>529</line>
           <option name="timeStamp" value="70" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/training.py</url>
-          <line>105</line>
-          <option name="timeStamp" value="72" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/model_define/defined_model.py</url>
           <line>78</line>
           <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/training.py</url>
+          <line>111</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/cv/load_data.py</url>
+          <line>30</line>
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/training.py</url>
+          <line>335</line>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/training.py</url>
+          <line>311</line>
+          <option name="timeStamp" value="86" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
