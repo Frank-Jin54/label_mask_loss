@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52cdb521-4820-4797-aca6-52563e9986a4" name="Changes" comment="add result">
-      <change afterPath="$PROJECT_DIR$/video/define_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video/load_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video/training.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loss/dynamic_encoding.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asr/define_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/asr/define_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cv/define_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/cv/define_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cv/load_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/cv/load_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loss/partial_loss.py" beforeDir="false" afterPath="$PROJECT_DIR$/loss/partial_loss.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_define/defined_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_define/defined_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nlp/define_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/nlp/define_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_define/transformer_translation.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_define/transformer_translation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/training.py" beforeDir="false" afterPath="$PROJECT_DIR$/training.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,18 +28,21 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2NZiTMDY3XAtaWWoN269XzqZG2D" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/josh/paper/label_mask_loss/video",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/josh/paper/label_mask_loss/video&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/nlp" />
@@ -57,7 +53,7 @@
       <recent name="$PROJECT_DIR$/dataset" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.IMAGENET_ADAM_LWSCE">
+  <component name="RunManager" selected="Python.CIFA10_ADAM_LWSCE">
     <configuration name="CIFA100_ADAM_CROSSENTROPY" type="PythonConfigurationType" factoryName="Python">
       <module name="label_mask_loss" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -1346,14 +1342,14 @@
       <item itemvalue="Python.IMAGENET_ADAM_CROSSENTROPY" />
       <item itemvalue="Python.IMAGENET_ADAM_LABELSMOOTHING" />
       <item itemvalue="Python.IMAGENET_ADAM_LWSCE" />
-      <item itemvalue="Python.POKEMON_ADAM_LABELSMOOTHING" />
-      <item itemvalue="Python.POKEMON_ADAM_LWSCE" />
       <item itemvalue="Python.KMNIST_ADAM_ALWSCE" />
       <item itemvalue="Python.KMNIST_ADAM_CROSSENTROPY" />
       <item itemvalue="Python.KMNIST_ADAM_LWSCE" />
       <item itemvalue="Python.KMNIST_RMSprop_ALWSCE" />
       <item itemvalue="Python.KMNIST_RMSprop_CROSSENTROPY" />
       <item itemvalue="Python.KMNIST_RMSprop_LWSCE" />
+      <item itemvalue="Python.POKEMON_ADAM_LABELSMOOTHING" />
+      <item itemvalue="Python.POKEMON_ADAM_LWSCE" />
       <item itemvalue="Python.QMINIST_ADAM_ALWSCE" />
       <item itemvalue="Python.QMINIST_ADAM_CROSSENTROPY" />
       <item itemvalue="Python.QMINIST_ADAM_LWSCE" />

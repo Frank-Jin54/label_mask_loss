@@ -251,6 +251,8 @@ elif args.lossfunction == 'LABELSMOOTHING':
     criterion = nn.CrossEntropyLoss(label_smoothing=0.2)
 elif args.lossfunction == "ALWSCE":
     criterion = AdaptiveMaskedCrossEntropyLoss(alpha=0.2, num_class=dataclasses_num, device=device)
+elif args.lossfunction == "LWSCE+LS":
+    criterion = AdaptiveMaskedCrossEntropyLoss(alpha=0.2, num_class=dataclasses_num, label_smoothing=0.2, device=device)
 else:
     raise Exception("Unaccept loss function {}".format(args.lossfunction))
 
@@ -285,7 +287,7 @@ def defineopt(model):
     return optimizer
 optimizer = defineopt(net)
 def define_scheduler(optimizer):
-    return ReduceLROnPlateau(optimizer)
+    return ReduceLROnPlateau(optimizer, patience=10)
 scheduler = define_scheduler(optimizer)
 ########################################################################
 def run_test(model_path):
@@ -364,32 +366,41 @@ for t in range(10): # train model 10 times
         model_path = os.path.join(current_folder, 'model', '{}_{}_{}_net.pth'.format(args.dataset, args.opt_alg, args.lossfunction))
         save_model(net, model_path)
         acc_epoch = run_test(model_path)
-        scheduler.step(metrics=acc_epoch)
+        # scheduler.step(metrics=acc_epoch)
         acc_epoch = round(acc_epoch, 2)
         L2 = L2_reg(net.parameters())
         acc.append([epoch, acc_epoch, round(running_loss, 2), L2])
         print("{} epoch acc is {}, L2 is {}".format(epoch, acc_epoch, L2))
     print('Finished Training')
-    result_file = os.path.join(os.path.join(current_folder, 'result', 'result_final_{}_{}_{}'.format(args.dataset, args.opt_alg, args.lossfunction), "{}.csv".format(str(t))))
+    result_file = os.path.join(os.path.join(current_folder, 'result', '{}_{}_{}_result'.format(args.dataset, args.opt_alg, args.lossfunction), "{}.csv".format(str(t))))
     if not os.path.exists(os.path.dirname(result_file)):
         os.makedirs(os.path.dirname(result_file))
     pd.DataFrame(acc).to_csv(result_file, header=["epoch", "training_acc", "training_loss", "L2"], index=False)
-    del net
-    del optimizer
     if isinstance(net, KMNISTNet):
+        del net
+        del optimizer
         net = KMNISTNet(num_class=dataclasses_num, num_channel=num_channel)
         net = net.to(device)
         optimizer = defineopt(net)
+        scheduler = define_scheduler(optimizer)
     elif isinstance(net, CIFARNet):
+        del net
+        del optimizer
         net = CIFARNet(num_class=dataclasses_num, num_channel=num_channel)
         net = net.to(device)
         optimizer = defineopt(net)
+        scheduler = define_scheduler(optimizer)
     elif isinstance(net, ViTForImageClassification):
+        del net
+        del optimizer
         net = ViTForImageClassification(num_labels=dataclasses_num, image_size=image_size)
         net = net.to(device)
         optimizer = defineopt(net)
+        scheduler = define_scheduler(optimizer)
     elif isinstance(net, IMAGENET):
-        # net = ViTForImageClassification(num_labels=dataclasses_num)
+        del net
+        del optimizer
         net = IMAGENET(num_class=dataclasses_num, num_channel=3)
         net = net.to(device)
         optimizer = defineopt(net)
+        scheduler = define_scheduler(optimizer)

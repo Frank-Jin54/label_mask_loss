@@ -9,7 +9,7 @@ from torchtext.data.utils import get_tokenizer
 from collections import Counter
 from torchtext.vocab.vocab import Vocab
 from torchtext.utils import download_from_url, extract_archive
-from loss.partial_loss import MaskedCrossEntropyLoss
+from loss.partial_loss import LabelWiseSignificanceCrossEntropy
 import io
 import argparse
 from torch.optim.lr_scheduler import StepLR, CosineAnnealingLR, LambdaLR, ReduceLROnPlateau
@@ -362,7 +362,7 @@ if args.lf == "CROSSENTROPY":
 elif args.lf == 'LABELSMOOTHING':
     criterion = nn.CrossEntropyLoss(ignore_index=PAD_IDX, label_smoothing=0.2)
 elif args.lf == "LWSCE":
-    criterion = MaskedCrossEntropyLoss(ignore_index=PAD_IDX, alpha=0.2, num_class=OUTPUT_DIM, input_type="log", device=device)
+    criterion = LabelWiseSignificanceCrossEntropy(ignore_index=PAD_IDX, alpha=0.2, num_class=OUTPUT_DIM, input_type="log", device=device)
 else:
     raise Exception("Unsupport loss function of {}".format(args.lf))
 
